@@ -1,0 +1,39 @@
+html {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+
+}
+
+.game {
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+}
+
+.game:hover {
+    opacity: calc(50%);
+}
+
+.btn1{
+    background-color: aquamarine;
+}
+
+.btn2{
+    background-color: limegreen;
+}
+
+.btn3{
+    background-color: palevioletred;
+}
+
+.btn4{
+    background-color: orange;
+}
