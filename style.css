@@ -131,6 +131,11 @@ body{
 {
     filter: brightness(150%);
 }
+.square:disabled,
+.disabled
+{
+    background-color: rgb(195, 195, 195);
+ }
 
 /* END CSS STYLE FOR MAIN SECTION */
 
