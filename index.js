@@ -7,6 +7,32 @@ const colorsChoise = {
   yellow,
 };
 
+/* SOUND */
+const uploadSound = function (fuente) {
+  const sound = document.createElement("audio");
+  sound.src = fuente;
+  sound.setAttribute("preload", "auto");
+  sound.setAttribute("controls", "none");
+  sound.style.display = "none";
+  document.body.appendChild(sound);
+  return sound;
+};
+
+const soundPurple = uploadSound("./media/simonSound1.mp3"),
+  soundGreenyellow = uploadSound("./media/simonSound2.mp3"),
+  soundPalevioletred = uploadSound("./media/simonSound3.mp3"),
+  soundYellow = uploadSound("./media/simonSound4.mp3");
+
+//Sound for button
+
+//button start - optional
+let soundStart = document.querySelector(".startBtn");
+soundStart.addEventListener("click", function () {
+  let tagAudio = document.createElement("audio");
+  tagAudio.setAttribute("src", "./media/simonClick.mp3");
+  //tagAudio.play();
+});
+
 //whitch color was choosen
 const numberToColor = (index) => {
   if (index === 0) return "purple";
@@ -43,21 +69,35 @@ const endGame = () => {
 
 /* LIGTHS */
 //light up pattern
-const hideColor = 350;
-const waiting = 600;
-const mediumWait = 1200;
+const hideColor = 450;
+const waiting = 700;
+const mediumWait = 1400;
+let colorSound;
 
 const lightUpPattern = () => {
   for (let index = 0; index <= levels; index++) {
     const color = numberToColor(sequence[index]);
     setTimeout(() => glowUpPattern(color), waiting * index);
+    //console.log(color);
   }
 };
 
 //glow up
-const glowUpPattern = (color) => {
+const glowUpPattern = async (color) => {
   colorsChoise[color].classList.add("glowUp");
   setTimeout(() => turnOffPattern(color), hideColor);
+
+  if (color === "purple") {
+    colorSound = soundPurple;
+  } else if (color === "greenyellow") {
+    colorSound = soundGreenyellow;
+  } else if (color === "palevioletred") {
+    colorSound = soundPalevioletred;
+  } else {
+    colorSound = soundYellow;
+  }
+  colorSound.currentTime = 0;
+  await colorSound.play();
 };
 
 //turn off color
@@ -122,44 +162,3 @@ colorsChoise.purple.addEventListener("click", userColorClick);
 colorsChoise.greenyellow.addEventListener("click", userColorClick);
 colorsChoise.palevioletred.addEventListener("click", userColorClick);
 colorsChoise.yellow.addEventListener("click", userColorClick);
-
-//audio media
-//buttonBegin
-let soundB = document.querySelector(".startBtn");
-soundB.addEventListener("click", function () {
-  let tagAudio = document.createElement("audio");
-  tagAudio.setAttribute("src", "./media/simonClick.mp3");
-  tagAudio.play();
-});
-
-//button1 - purple
-let sound1 = document.querySelector("#purple");
-sound1.addEventListener("click", function () {
-  let tagAudio = document.createElement("audio");
-  tagAudio.setAttribute("src", "./media/simonSound1.mp3");
-  tagAudio.play();
-});
-
-//button2 - greenyellow
-let sound2 = document.querySelector("#greenyellow");
-sound2.addEventListener("click", function () {
-  let tagAudio = document.createElement("audio");
-  tagAudio.setAttribute("src", "./media/simonSound2.mp3");
-  tagAudio.play();
-});
-
-//button3 - palevioletred
-let sound3 = document.querySelector("#palevioletred");
-sound3.addEventListener("click", function () {
-  let tagAudio = document.createElement("audio");
-  tagAudio.setAttribute("src", "./media/simonSound3.mp3");
-  tagAudio.play();
-});
-
-//button4 - yellow
-let sound4 = document.querySelector("#yellow");
-sound4.addEventListener("click", function () {
-  let tagAudio = document.createElement("audio");
-  tagAudio.setAttribute("src", "./media/simonSound4.mp3");
-  tagAudio.play();
-});
