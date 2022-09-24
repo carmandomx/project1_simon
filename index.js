@@ -122,3 +122,44 @@ colorsChoise.purple.addEventListener("click", userColorClick);
 colorsChoise.greenyellow.addEventListener("click", userColorClick);
 colorsChoise.palevioletred.addEventListener("click", userColorClick);
 colorsChoise.yellow.addEventListener("click", userColorClick);
+
+//audio media
+//buttonBegin
+let soundB = document.querySelector(".startBtn");
+soundB.addEventListener("click", function () {
+  let tagAudio = document.createElement("audio");
+  tagAudio.setAttribute("src", "./media/simonClick.mp3");
+  tagAudio.play();
+});
+
+//button1 - purple
+let sound1 = document.querySelector("#purple");
+sound1.addEventListener("click", function () {
+  let tagAudio = document.createElement("audio");
+  tagAudio.setAttribute("src", "./media/simonSound1.mp3");
+  tagAudio.play();
+});
+
+//button2 - greenyellow
+let sound2 = document.querySelector("#greenyellow");
+sound2.addEventListener("click", function () {
+  let tagAudio = document.createElement("audio");
+  tagAudio.setAttribute("src", "./media/simonSound2.mp3");
+  tagAudio.play();
+});
+
+//button3 - palevioletred
+let sound3 = document.querySelector("#palevioletred");
+sound3.addEventListener("click", function () {
+  let tagAudio = document.createElement("audio");
+  tagAudio.setAttribute("src", "./media/simonSound3.mp3");
+  tagAudio.play();
+});
+
+//button4 - yellow
+let sound4 = document.querySelector("#yellow");
+sound4.addEventListener("click", function () {
+  let tagAudio = document.createElement("audio");
+  tagAudio.setAttribute("src", "./media/simonSound4.mp3");
+  tagAudio.play();
+});
