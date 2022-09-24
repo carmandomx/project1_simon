@@ -1,3 +1,10 @@
+html * {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: bold;
+}
+
 html {
   display: flex;
   flex-direction: column;
@@ -10,6 +17,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(128, 128, 128, 0.15);
 }
 
 button {
@@ -25,46 +33,46 @@ button {
   margin: auto;
 }
 
-.game,
-.pressed {
+#tittle {
+  font-size: xx-large;
+}
+
+div.row > button {
   width: 300px;
   height: 300px;
   margin: 10px;
-
   border-radius: 15px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.9);
   outline: none;
+  transition: all 0.3s ease 0s;
 }
 
-.game:hover {
-  opacity: calc(40%);
-  background-color: rgba(255, 255, 255, 0.25);
+div.row > button:hover {
   box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
   transform: translateY(-8px);
 }
 
-.pressed {
-  border: rgb(255, 251, 0) solid 5px;
+#purple {
+  color: purple;
+  background-color: purple;
 }
 
-.btn1 {
-  background-color: rgb(91, 29, 235);
+#greenyellow {
+  color: greenyellow;
+  background-color: greenyellow;
 }
 
-.btn2 {
-  background-color: rgb(50, 205, 135);
+#palevioletred {
+  color: palevioletred;
+  background-color: palevioletred;
 }
 
-.btn3 {
-  background-color: rgb(222, 59, 113);
+#yellow {
+  color: yellow;
+  background-color: yellow;
 }
 
-.btn4 {
-  background-color: rgb(255, 251, 0);
-}
-
-.begin {
+section > #startBtn {
   margin: 15px;
   background-color: black;
   color: white;
@@ -74,7 +82,7 @@ button {
   transition: all 0.3s ease 0s;
 }
 
-.begin:hover {
+section > #startBtn:hover {
   opacity: calc(80%);
   color: black;
   background-color: rgba(65, 65, 65, 0.25);
@@ -82,14 +90,25 @@ button {
   transform: translateY(-4px);
 }
 
+.glowUp {
+  background-color: rgba(245, 245, 245, 0.2) !important;
+}
+
+.hideIt {
+  display: none !important;
+}
+
 @media only screen and (max-width: 660px) {
-  .game,
-  .pressed {
+  #tittle {
+    font-size: x-large;
+  }
+
+  section > div > button.gameBtn {
     width: 200px;
     height: 200px;
   }
 
-  .begin {
+  section > #startBtn {
     width: 125px;
     height: 75px;
     border-radius: 10px;
@@ -97,15 +116,19 @@ button {
 }
 
 @media (max-width: 480px) {
-  .game,
-  .pressed {
-    width: 100px;
-    height: 100px;
+  #tittle {
+    font-size: large;
   }
 
-  .begin {
-    width: 75px;
-    height: 25px;
-    border-radius: 5px;
+  section > div > button.gameBtn {
+    width: 120px;
+    height: 120px;
   }
-} ;
+
+  section > #startBtn {
+    width: 105px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: small;
+  }
+}
