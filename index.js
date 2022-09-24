@@ -62,7 +62,8 @@ class  SimonSays{
         let index=0;
         let patternTimer = setInterval(() => {
             const button = this.getButton(this.patternArray[index]);
-            this.activateButton(button)
+            this.activateButton(button);
+            this.playSoundButton(this.patternArray[index]);
             setTimeout( () => this.activateButton(button),  500)
             index++;
             if (index > this.step) {
@@ -92,7 +93,7 @@ class  SimonSays{
 
     checkColor(color){
         if(this.patternArray[this.pattern]===color){
-            
+            this.playSoundButton(this.patternArray[this.pattern]);
             if(this.step===this.pattern){
                 this.step=this.step+1;
                 this.pattern=0;
@@ -101,10 +102,15 @@ class  SimonSays{
                 this.pattern++;
             }
         }else{
-
+            
         }
 
     }
+
+    playSoundButton(color){
+        this.getSounds[color].play();
+    }
+    
 
     getRandomIn (min, max){ 
         return Math.floor(Math.random() * (max - min + 1) + min)
