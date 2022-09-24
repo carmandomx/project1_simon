@@ -96,13 +96,13 @@ class  SimonSays{
             this.playSoundButton(this.patternArray[this.pattern]);
             if(this.step===this.pattern){
                 this.step=this.step+1;
-                this.pattern=0;
-                this.showPattern();
+                this.resetPattern();
             }else{
                 this.pattern++;
             }
         }else{
-            
+            this.playWrongButton();
+            this.resetPattern();
         }
 
     }
@@ -110,7 +110,9 @@ class  SimonSays{
     playSoundButton(color){
         this.getSounds[color].play();
     }
-    
+    playWrongButton(){
+        this.failSound.play();
+    }
 
     getRandomIn (min, max){ 
         return Math.floor(Math.random() * (max - min + 1) + min)
@@ -142,6 +144,11 @@ class  SimonSays{
             default: return -1;
         }
 
+    }
+
+    resetPattern(){
+        this.pattern=0;
+        this.showPattern();
     }
 
     
