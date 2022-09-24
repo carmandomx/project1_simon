@@ -183,3 +183,34 @@ body{
 
 /* END STARD AND END BUTTONS SECTION STYLE */
 
+
+/* CIRCLE AND ROUND INFORMATION SECTION */
+.circle{
+    position: absolute;
+    background:  rgb(45, 45, 45);
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+    box-shadow: 10px 5px 25px rgba(0, 0, 0, 0.263);
+    z-index: 1;
+}
+
+.circleCount{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 300px;
+    font-size: 80px;
+    font-weight: 800;
+    color: rgb(195, 195, 195);
+}
+
+.static{
+    color: rgb(23, 23, 23);
+}
+
+/* END CIRCLE AND ROUND INFORMATION SECTION */

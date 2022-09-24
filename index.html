@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/83bdeaebc9.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    
     <!-- Good luck! -->}
     <header>
         <figure class="logoContainer">
@@ -18,6 +19,14 @@
 
     <main class="main">
 
+        <!-- This section will display the round number -->
+        <div  class="circle">
+            <span class="circleCount">
+                <label id="round"></label> <!-- Here we call the variable from index.js -->
+                <p class="static">/20</p>
+            </span>
+        </div>
+        
         <!-- this section will display the buttons for play the game -->
         <div class="main_central">
             <button id="buttonsqr" class="buttonA square a"> GREEN</button>
@@ -33,8 +42,8 @@
 
     <section class="buttonsSE_Container">
         <div class="buttonsSE">
-            <button id="startButton" class="SEbutton start" onclick="simon.finished()">Start </button>
-            <button id="endButton" class="SEbutton end" onclick="simon.playAgain()">End</button>
+            <button id="startButton" class="SEbutton start">Start </button>
+            <button id="endButton" class="SEbutton end">End</button>
         </div>
     </section>
 
