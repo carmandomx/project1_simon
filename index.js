@@ -16,29 +16,10 @@ class  SimonSays{
     pattern=0;
     step=0;
     patternArray=[];
+    round = 0;
+    totalRounds = 20;
+    contStep = 0;
     
-    finished() {// FUCTION TO CALL TO THE WINNER MODAL DISPLAY
-        var modal = document.querySelector("#myModal");
-        this.winSound.play();
-        setTimeout(() => { modal.style.display = "block";}, 250);  
-    }
-
-    playAgain(){ //FUCTION TO CALL THE MODAL FOR PLAY AGAIN IF THE PLAYER CLICK 'END BUTTON'
-        var modal = document.querySelector("#myModalPlayAgain");
-        modal.style.display = "block";
-        
-        //we make a countdown for restar the game
-        var timeleft = 3;
-        var downloadTimer = setInterval(function(){
-        if(timeleft <= 0){
-            clearInterval(downloadTimer);
-            location.reload();
-        }
-        document.querySelector('#Timer').innerHTML = timeleft; //WRITTING THE COUNTDOWN IN HTML
-        timeleft -= 1;
-        }, 1000); 
- 
-    }
     
     pressButton(elem){
         if(elem.disabled){
@@ -60,6 +41,8 @@ class  SimonSays{
     showPattern(){
         this.ableButtons();
         let index=0;
+        document.querySelector('#round').innerHTML = this.step + 1;
+        document.querySelector('#round2').innerHTML = this.step + 1;
         let patternTimer = setInterval(() => {
             const button = this.getButton(this.patternArray[index]);
             this.activateButton(button);
@@ -94,13 +77,18 @@ class  SimonSays{
     checkColor(color){
         if(this.patternArray[this.pattern]===color){
             this.playSoundButton(this.patternArray[this.pattern]);
+            this.contStep +=1;
+            document.querySelector('#ContStep').innerHTML = this.contStep;
             if(this.step===this.pattern){
                 this.step=this.step+1;
+                this.contStep = 0;
+                setTimeout( () => document.querySelector('#ContStep').innerHTML = 0,  1000)
                 this.resetPattern();
             }else{
                 this.pattern++;
             }
         }else{
+            document.querySelector('#ContStep').innerHTML = 0;
             this.playWrongButton();
             this.resetPattern();
         }
@@ -109,6 +97,7 @@ class  SimonSays{
 
     playSoundButton(color){
         this.getSounds[color].play();
+
     }
     playWrongButton(){
         this.failSound.play();
@@ -119,6 +108,7 @@ class  SimonSays{
     }
 
     startPlay(){
+        document.querySelector('#round').innerHTML = 0;
         this.createRandomPattern(); 
         this.showPattern();
         
@@ -148,6 +138,7 @@ class  SimonSays{
 
     resetPattern(){
         this.pattern=0;
+        this.contStep = 0;
         this.showPattern();
     }
 

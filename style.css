@@ -216,4 +216,14 @@ body{
     color: rgb(23, 23, 23);
 }
 
+.userStep{
+    padding-top: 20px;
+    width: 100%;
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    color: rgb(47, 47, 47);
+}
+
 /* END CIRCLE AND ROUND INFORMATION SECTION */
