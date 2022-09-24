@@ -102,9 +102,7 @@ class  SimonSays{
                 this.pattern++;
             }
         }else{
-            this.playWrongButton();
-            this.pattern=0;
-                this.showPattern();
+            
         }
 
     }
@@ -112,9 +110,7 @@ class  SimonSays{
     playSoundButton(color){
         this.getSounds[color].play();
     }
-    playWrongButton(){
-        this.failSound.play();
-    }
+    
 
     getRandomIn (min, max){ 
         return Math.floor(Math.random() * (max - min + 1) + min)
