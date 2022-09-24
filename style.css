@@ -1,0 +1,66 @@
+html, body{ height: 100%;}
+
+body{
+    margin: 0%;
+    font-family: 'Times New Roman';
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+.flexBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+    
+}
+
+.buttonsState   {
+    /*background-color: rebeccapurple;*/
+    max-width: 450px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.flexBox_row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.buttonContainer{
+    display: inline-grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto;
+    vertical-align: middle;
+}
+
+.square{
+    border-radius: 5px;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.square:active, .active{
+    filter: brightness(130%);
+}
+
+.red{ background-color: #EE6352;}
+.blue{ background-color: #08B2E3;}
+.green{ background-color: #57A773;}
+.yellow{ background-color: #FFDF64;}
+
+.footer{
+    font-size: large;
+}
