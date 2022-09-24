@@ -1,13 +1,11 @@
 /* GENERALS STYLES */ 
 *{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    resize:none;
 }
 body{
     background-color: rgb(224, 224, 224);
     box-sizing: border-box;
     overflow: hidden;
-    resize:none;
     
 }
 
@@ -41,7 +39,6 @@ body{
 
 
 .main{
-    resize:none;
     width: 100%;
     height: 100%;
     margin: 0   auto;
