@@ -1,0 +1,160 @@
+body {
+    background-color:#0D0D0D;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
+header {
+    font-family: 'Reem Kufi Ink', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Bungee Spice', cursive;
+}
+
+br {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.game {
+    display: flex;
+}
+
+/* ----------------- <game> -------------------*/
+.left {
+    flex: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.simon {
+    flex: 40;
+    display: grid;
+    grid-template-areas: 
+    "b-green  b-red"
+    "b-yellow b-blue";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 1%;
+    padding-left: 17rem;
+    padding-right: 17rem;
+}
+
+.right {
+    flex: 30;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ads {
+    position: absolute;
+    background-color: white;
+    height: 15rem;
+    width: 20rem;
+    margin-left: 83%;
+    margin-top: 34%;
+}
+
+/* ----------------- <simon> -------------------*/
+.b-green {
+    grid-area: b-green;
+    background-color: #038C73;
+    border-top-left-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+}
+
+.b-red {
+    grid-area: b-red;
+    background-color: #D92B04;
+    border-top-right-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+}
+
+.b-blue {
+    grid-area: b-blue;
+    background-color: #0487D9;   
+    border-bottom-right-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+}
+
+.b-yellow {
+    grid-area: b-yellow;
+    background-color: #F29F05;
+    border-bottom-left-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+
+}
+
+.circle {
+    position:absolute;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 6%;
+    width: 20rem;
+    height: 20rem;
+    color: #0D0D0D;
+    text-align: center;
+
+}
+
+/* ----------------- <left> -------------------*/
+
+.difficulty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 25%;
+    background-color: #485B73;
+    border-radius: 5%;
+    height: 4rem;
+    text-align: center;
+}
+
+.historie {
+    margin-left: 25%;
+    background-color: #485B73;
+    border-radius: 5%;
+    height: 20rem;
+    text-align: center;
+}
+
+/* ----------------- <right> -------------------*/
+
+.lives {
+    margin-right: 20%;
+    background-color: #485B73;
+    border-radius: 5%;
+    height: 5rem;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+}
+
+/* ----------------- <difficulty> -------------------*/
+
+.level {
+    flex: 1;
+    background: white;
+    width: 1rem;
+    height: 1rem;
+    border-color: #0D0D0D;
+    border: 5px;
+}
+
+/* ----------------- <main> -------------------*/
+
+.start {
+    
+}
