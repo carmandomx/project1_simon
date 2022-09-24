@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  box-sizing: border-box;
+  vertical-align: baseline;
+  font-family: 'Press Start 2P', cursive;
+}
+
+body {
+  background-color: white !important;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+h1 {
+  margin: 10px;
+  padding: 5px 15px;
+  font-size: 30px;
+}
+p {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.square-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px 100px;
+  grid-template-areas:
+    'sq-red1 sq-red2  sq-green1 sq-green2'
+    'sq-red3 circle1  circle2 sq-green3'
+    'sq-blue1 circle3 circle4 sq-yellow1'
+    'sq-blue2 sq-blue3 sq-yellow2 sq-yellow3';
+}
+
+.square {
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out, margin-top 0.2s ease-in-out,
+    opacity 0.2s ease-in-out;
+  border: 5px solid rgba(0, 0, 0, 0.7);
+}
+.square-red {
+  grid-row: sq-red1 / sq-red3;
+  grid-column: sq-red1 / sq-red2;
+  background-color: rgb(247, 10, 10);
+  box-shadow: 2px 6px 2px rgb(157, 23, 23), 2px 5px 15px -4px red;
+  border-radius: 100% 10px 0 10px;
+}
+.square-green {
+  border-radius: 10px 100% 10px 0;
+  grid-row: sq-green2 / sq-green3;
+  /* grid-column: span 2; */
+  grid-column: sq-green1 / sq-green2;
+  background-color: rgb(20, 172, 20);
+  box-shadow: 2px 6px 2px rgb(25, 114, 46), 2px 5px 15px -4px green;
+}
+
+.square-yellow {
+  border-radius: 0 10px 100% 10px;
+  grid-row: sq-yellow1 / sq-yellow3;
+  grid-column: circle4 / sq-yellow1;
+  background-color: yellow;
+  box-shadow: 2px 6px 2px rgb(117, 146, 13), 2px 5px 15px -4px yellow;
+}
+.square-blue {
+  border-radius: 10px 0 10px 100%;
+  grid-row: sq-blue1 / sq-blue2;
+  grid-column: sq-blue1 / circle3;
+  background-color: rgb(2, 2, 222);
+  box-shadow: 2px 6px 2px rgb(21, 11, 110), 2px 5px 15px -4px blue;
+}
+
+.pushed {
+  box-shadow: none;
+  border: none;
+  margin-top: 6px;
+}
