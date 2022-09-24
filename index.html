@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITK - Simon</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/83bdeaebc9.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- Good luck! -->}
@@ -29,6 +30,13 @@
 
     
     <!--  Buttons container for start the game or end the current section -->
+
+    <section class="buttonsSE_Container">
+        <div class="buttonsSE">
+            <button id="startButton" class="SEbutton start" onclick="simon.finished()">Start </button>
+            <button id="endButton" class="SEbutton end" onclick="simon.playAgain()">End</button>
+        </div>
+    </section>
 
 
     <script src="./index.js"></script>

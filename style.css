@@ -1,5 +1,4 @@
 /* GENERALS STYLES */ 
-
 *{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -8,7 +7,6 @@ body{
     box-sizing: border-box;
     overflow: hidden;
 }
-
 
 /* {
     outline: 1px solid red !important;
@@ -137,7 +135,6 @@ body{
 }
 
 /* END CSS STYLE FOR MAIN SECTION */
-
 
 /* STARD AND END BUTTONS SECTION STYLE */
 
