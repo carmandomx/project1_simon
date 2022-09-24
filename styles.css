@@ -1,104 +1,134 @@
+html * {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: large;
+  font-weight: bold;
+}
+
 html {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(128, 128, 128, 0.15);
+}
+
+button {
+  cursor: pointer;
+}
+
+.main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+#tittle {
+  font-size: xx-large;
+}
+
+div.row > button {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.9);
+  outline: none;
+  transition: all 0.3s ease 0s;
+}
+
+div.row > button:hover {
+  box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
+  transform: translateY(-8px);
+}
+
+#purple {
+  color: purple;
+  background-color: purple;
+}
+
+#greenyellow {
+  color: greenyellow;
+  background-color: greenyellow;
+}
+
+#palevioletred {
+  color: palevioletred;
+  background-color: palevioletred;
+}
+
+#yellow {
+  color: yellow;
+  background-color: yellow;
+}
+
+section > #startBtn {
+  margin: 15px;
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 100px;
+  border-radius: 15px;
+  transition: all 0.3s ease 0s;
+}
+
+section > #startBtn:hover {
+  opacity: calc(80%);
+  color: black;
+  background-color: rgba(65, 65, 65, 0.25);
+  box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+.glowUp {
+  background-color: rgba(245, 245, 245, 0.2) !important;
+}
+
+.hideIt {
+  display: none !important;
+}
+
+@media only screen and (max-width: 660px) {
+  #tittle {
+    font-size: x-large;
   }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+  section > div > button.gameBtn {
+    width: 200px;
+    height: 200px;
   }
-  
-  button {
-    cursor: pointer;
+
+  section > #startBtn {
+    width: 125px;
+    height: 75px;
+    border-radius: 10px;
   }
-  
-  .main {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+}
+
+@media (max-width: 480px) {
+  #tittle {
+    font-size: large;
   }
-  
-  .game {
-    width: 300px;
-    height: 300px;
-    margin: 10px;
-  
-    border-radius: 15px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    outline: none;
+
+  section > div > button.gameBtn {
+    width: 120px;
+    height: 120px;
   }
-  
-  .game:hover {
-    opacity: calc(40%);
-    background-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
-    transform: translateY(-8px);
+
+  section > #startBtn {
+    width: 105px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: small;
   }
-  
-  .btn1 {
-    background-color: rgb(91, 29, 235);
-  }
-  
-  .btn2 {
-    background-color: rgb(50, 205, 135);
-  }
-  
-  .btn3 {
-    background-color: rgb(222, 59, 113);
-  }
-  
-  .btn4 {
-    background-color: rgb(255, 251, 0);
-  }
-  
-  .begin {
-    margin: 15px;
-    background-color: black;
-    color: white;
-    width: 250px;
-    height: 100px;
-    border-radius: 15px;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .begin:hover {
-    opacity: calc(80%);
-    color: black;
-    background-color: rgba(65, 65, 65, 0.25);
-    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.4);
-    transform: translateY(-4px);
-  }
-  
-  @media only screen and (max-width: 660px) {
-    .game {
-      width: 200px;
-      height: 200px;
-    }
-  
-    .begin {
-      width: 125px;
-      height: 75px;
-      border-radius: 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .game {
-      width: 100px;
-      height: 100px;
-    }
-  
-    .begin {
-      width: 75px;
-      height: 25px;
-      border-radius: 5px;
-    }
-  } ;
+}
