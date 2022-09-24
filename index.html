@@ -29,10 +29,10 @@
         
         <!-- this section will display the buttons for play the game -->
         <div class="main_central">
-            <button id="buttonsqr" class="buttonA square a"> GREEN</button>
-            <button id="buttonsqr" class="buttonB square b">YELLLOW</button>
-            <button id="buttonsqr" class="buttonC square c">RED</button>
-            <button id="buttonsqr" class="buttonD square d">BLUE</button>
+            <button id="buttonsqrgreen" disabled class="buttonA square a" onclick="simon.pressButton(this)"> GREEN</button>
+            <button id="buttonsqrred" disabled class="buttonB square b" onclick="simon.pressButton(this)">YELLLOW</button>
+            <button id="buttonsqryellow" disabled class="buttonC square c" onclick="simon.pressButton(this)">RED</button>
+            <button id="buttonsqrblue" disabled class="buttonD square d" onclick="simon.pressButton(this)">BLUE</button>
         </div> 
         
     </main>
@@ -42,7 +42,7 @@
 
     <section class="buttonsSE_Container">
         <div class="buttonsSE">
-            <button id="startButton" class="SEbutton start">Start </button>
+            <button id="startButton" class="SEbutton start" onclick="simon.startPlay()">Start </button>
             <button id="endButton" class="SEbutton end">End</button>
         </div>
     </section>
