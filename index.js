@@ -94,12 +94,11 @@ const nextRound = (options = { withNewColor: true }) => {
   resetPlayerRound();
   // Get game sequence
   gameSequence = nextSequence(options);
+    //Shows the steps in the pattenr;
+  levelPattern(gameSequence);
   // Show game sequence animation
-  gameSequence.forEach((element, i) => {
-    setTimeout(() => {
-      squareAnimation(element);
-    }, 800 * (i + 1));
-  });
+  setTimeout(animationSequence,1000);
+
 };
 //Show animation sequence
 const animationSequence = () => {
@@ -108,6 +107,12 @@ const animationSequence = () => {
       squareAnimation(element);
     }, 800 * (i + 1));
   });
+}
+//shows the nummber of steps in the pattern
+const levelPattern = (array) => {
+    //Shows the steps in the pattenr;
+    const lev = document.querySelector('#level');
+    lev.textContent = array.length;
 }
 // Variable to know if the sequence was repeated correctly
 let sequenceOK = false;
@@ -137,7 +142,8 @@ const playerRound = () => {
           : (sequenceOK = false);
         if (sequenceOK) {
           // Call to nextRound function (generate the next sequence)
-          nextRound();
+          setTimeout(nextRound,800);
+        
         }
       } else {
         // TODO: UserStory4 - alert the user that he failed, reset round and play game sequence again without adding a new color if hard mode is disabled
