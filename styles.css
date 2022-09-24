@@ -1,104 +1,111 @@
 html {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+.main {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.game,
+.pressed {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+
+  border-radius: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  outline: none;
+}
+
+.game:hover {
+  opacity: calc(40%);
+  background-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
+  transform: translateY(-8px);
+}
+
+.pressed {
+  border: rgb(255, 251, 0) solid 5px;
+}
+
+.btn1 {
+  background-color: rgb(91, 29, 235);
+}
+
+.btn2 {
+  background-color: rgb(50, 205, 135);
+}
+
+.btn3 {
+  background-color: rgb(222, 59, 113);
+}
+
+.btn4 {
+  background-color: rgb(255, 251, 0);
+}
+
+.begin {
+  margin: 15px;
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 100px;
+  border-radius: 15px;
+  transition: all 0.3s ease 0s;
+}
+
+.begin:hover {
+  opacity: calc(80%);
+  color: black;
+  background-color: rgba(65, 65, 65, 0.25);
+  box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+@media only screen and (max-width: 660px) {
+  .game,
+  .pressed {
+    width: 200px;
+    height: 200px;
   }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  button {
-    cursor: pointer;
-  }
-  
-  .main {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
-  
-  .game {
-    width: 300px;
-    height: 300px;
-    margin: 10px;
-  
-    border-radius: 15px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease 0s;
-    outline: none;
-  }
-  
-  .game:hover {
-    opacity: calc(40%);
-    background-color: rgba(255, 255, 255, 0.25);
-    box-shadow: 0px 15px 20px rgba(255, 255, 255, 0.4);
-    transform: translateY(-8px);
-  }
-  
-  .btn1 {
-    background-color: rgb(91, 29, 235);
-  }
-  
-  .btn2 {
-    background-color: rgb(50, 205, 135);
-  }
-  
-  .btn3 {
-    background-color: rgb(222, 59, 113);
-  }
-  
-  .btn4 {
-    background-color: rgb(255, 251, 0);
-  }
-  
+
   .begin {
-    margin: 15px;
-    background-color: black;
-    color: white;
-    width: 250px;
+    width: 125px;
+    height: 75px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .game,
+  .pressed {
+    width: 100px;
     height: 100px;
-    border-radius: 15px;
-    transition: all 0.3s ease 0s;
   }
-  
-  .begin:hover {
-    opacity: calc(80%);
-    color: black;
-    background-color: rgba(65, 65, 65, 0.25);
-    box-shadow: 0px 5px 10px rgba(255, 255, 255, 0.4);
-    transform: translateY(-4px);
+
+  .begin {
+    width: 75px;
+    height: 25px;
+    border-radius: 5px;
   }
-  
-  @media only screen and (max-width: 660px) {
-    .game {
-      width: 200px;
-      height: 200px;
-    }
-  
-    .begin {
-      width: 125px;
-      height: 75px;
-      border-radius: 10px;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .game {
-      width: 100px;
-      height: 100px;
-    }
-  
-    .begin {
-      width: 75px;
-      height: 25px;
-      border-radius: 5px;
-    }
-  } ;
+} ;
