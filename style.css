@@ -29,7 +29,7 @@ body{
 }
 
 .simonLogo{
-    width: 1050px;
+    width: 850px;
 }
 
 
@@ -49,7 +49,7 @@ body{
     flex-flow: row wrap;
     justify-content: flex-start;
     align-items: flex-start;
-    width: 50%;
+    width: 40%;
     height: 650px;
     margin: 0 auto;
     box-shadow: 10px 5px 25px rgba(0, 0, 0, 0.263);
@@ -57,7 +57,7 @@ body{
 
 
 .square{
-    width: 49.1%;
+    width: 48.88%;
     height: 315px;
     text-align:center
 }
@@ -141,7 +141,7 @@ body{
 .buttonsSE_Container{
     width: 100%;
     height: 120px;
-    padding-top: 60px;
+    padding-top: 30px;
     margin: 0   auto;
     display: flex;
     justify-content: center;
@@ -189,8 +189,8 @@ body{
     position: absolute;
     background:  rgb(45, 45, 45);
     border-radius: 50%;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     margin: 0 auto;
     box-shadow: 10px 5px 25px rgba(0, 0, 0, 0.263);
     z-index: 1;
@@ -202,9 +202,9 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
-    width: 300px;
-    height: 300px;
-    font-size: 80px;
+    width: 250px;
+    height: 250px;
+    font-size: 70px;
     font-weight: 800;
     color: rgb(195, 195, 195);
 }
