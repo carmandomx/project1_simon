@@ -6,8 +6,9 @@ const src = ["https://s3.amazonaws.com/freecodecamp/simonSound1.mp3",
                   "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3",
                   "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3",
                   "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3",
-                  "http://soundfxcenter.com/video-games/sonic-the-hedgehog/8d82b5_Sonic_Sega_Sound_Effect.mp3"];
-const audio = [new Audio(src[0]),new Audio(src[1]),new Audio(src[2]),new Audio(src[3]),new Audio(src[4])];
+                  "http://soundfxcenter.com/video-games/sonic-the-hedgehog/8d82b5_Sonic_Sega_Sound_Effect.mp3",
+                  "https://www.myinstants.com/media/sounds/erro.mp3"];
+const audio = [new Audio(src[0]),new Audio(src[1]),new Audio(src[2]),new Audio(src[3]),new Audio(src[4]),new Audio(src[5])];
 
 
 let level = 0;
@@ -15,10 +16,23 @@ let level = 0;
 let gameSequence = [];
 // Variable to store the clicked colors (player)
 let playerSequence = [];
-let audio_index = 0;
+
+
+const vibration = [
+  { transform: 'translate3d(-3px, 0, 0)' },
+  { transform: 'translate3d(4px, 0, 0)' },
+  { transform: 'translate3d(-8px, 0, 0)'},
+  { transform: 'translate3d(8px, 0, 0)' },
+
+];
+const vibrationTiming = {
+  duration: 2,
+  iterations: 20,
+}
 
 // function for button animation
 const squareAnimation = (color) => {
+  //Give a sound based of the color
   audio[colors.indexOf(color)].play();
   // Variable for select button using the color clicked
   const square = document.querySelector(`.square-${color}`);
@@ -28,8 +42,15 @@ const squareAnimation = (color) => {
   setTimeout(() => {
     square.classList.remove('pushed');
   }, 200);
-};
+}; 
 
+//function for give an animation to the container when an error occurs
+const shakeError = () =>{
+  audio[5].play();
+  const square = document.querySelector('.square-container');
+  square.animate(vibration,vibrationTiming);
+
+}
 const circleAnimation = () => {
   const circleStart = document.querySelector('.circle');
   circleStart.classList.add('pushed');
@@ -80,6 +101,14 @@ const nextRound = (options = { withNewColor: true }) => {
     }, 800 * (i + 1));
   });
 };
+//Show animation sequence
+const animationSequence = () => {
+  gameSequence.forEach((element, i) => {
+    setTimeout(() => {
+      squareAnimation(element);
+    }, 800 * (i + 1));
+  });
+}
 // Variable to know if the sequence was repeated correctly
 let sequenceOK = false;
 // Variable to store the player clicks
@@ -93,12 +122,11 @@ const playerRound = () => {
     // Condition to confirm that a square is clicked
     if (event.target.classList.contains('square')) {
       const color = event.target.id;
-      // calls animation for the button and passes the color
-      console.log(colors.indexOf(color));
-      audio[colors.indexOf(color)].play();
-      squareAnimation(color);
       // Every click will be compared with the corresponding item in the gameSequence
       if (gameSequence[playerClicks] === color) {
+        // calls animation for the button and passes the color
+        squareAnimation(color);
+        //audio[colors.indexOf(color)].play();
         // Add color to the player sequence
         playerSequence.push(color);
         // Add 1 to variable that store the clicks
@@ -114,10 +142,15 @@ const playerRound = () => {
       } else {
         // TODO: UserStory4 - alert the user that he failed, reset round and play game sequence again without adding a new color if hard mode is disabled
         // setTimeout for the animation of the button when player fails
+        
         setTimeout(() => {
+          //Gives an error sign that the pattern was incorrect
+          shakeError();
           console.log('Wrong!!! :c');
           // Reset variables related to the player
           resetPlayerRound();
+          //Show the player again the sequence
+          setTimeout(animationSequence,1000);
         }, 300);
       }
     }
