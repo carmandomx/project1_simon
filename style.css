@@ -1,4 +1,4 @@
-body{
+body {
     font-family: sans-serif;
 }
 
@@ -41,6 +41,7 @@ body{
     margin: 0%;
     padding-right: 1%;
 }
+
 .containerYellow {
     margin: 0%;
     padding-left: 1%;
@@ -50,6 +51,7 @@ body{
     margin: 0%;
     padding-left: 1%;
 }
+
 .containerAqua {
     margin: 0%;
     padding-right: 1%;
@@ -63,12 +65,12 @@ body{
     margin: 0 0 0 auto;
     padding: 100px 150px 100px 150px;
     background-color: #f1c50e;
-    
+
 }
 
 .btnYellow:hover {
-    background-color: #f4d13e; 
-  }
+    background-color: #f4d13e;
+}
 
 .btnBlue {
     border-style: none;
@@ -78,9 +80,10 @@ body{
     padding: 100px 150px 100px 150px;
     background-color: #478ac9;
 }
+
 .btnBlue:hover {
-    background-color: #6ea3d5; 
-  }
+    background-color: #6ea3d5;
+}
 
 .btnRed {
     border-style: none;
@@ -90,9 +93,10 @@ body{
     padding: 100px 150px 100px 150px;
     background-color: #db545a;
 }
+
 .btnRed:hover {
-    background-color: #e47e83; 
-  }
+    background-color: #e47e83;
+}
 
 .btnAqua {
     border-style: none;
@@ -102,9 +106,10 @@ body{
     padding: 100px 150px 100px 150px;
     background-color: #2cccc4;
 }
+
 .btnAqua:hover {
-    background-color: #51dad3; 
-  }
+    background-color: #51dad3;
+}
 
 .btnStart {
     border-style: none;
@@ -116,13 +121,14 @@ body{
     margin: 0 0 0 auto;
     padding: 30px 60px 30px 60px;
     background-color: black;
-    
+
 }
-.bt5{
+
+.bt5 {
     padding-top: 300px;
 }
-.btnStart{
+
+.btnStart {
     justify-content: center;
 
 }
-
