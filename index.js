@@ -50,6 +50,7 @@ let sublevels = 0;
 
 //Start
 const playGame = () => {
+  document.querySelector('#tittle').textContent = 'Simon says...'; //set the title text back to Simon says when restarting the game
   sequence = new Array(stages);
   sequence = sequence
     .fill(0)
@@ -140,12 +141,10 @@ const userColorClick = (onClick) => {
       }
     }
   } else {
-    //if user fails
-    console.log("perdiste");
-    /*
-    Warnings here!!!
-    */
-    endGame();
+      //if user fails
+      console.log("perdiste");
+      document.querySelector('#tittle').textContent = 'You lost!'; //Display the YOU LOST message
+      endGame();
   }
 };
 
