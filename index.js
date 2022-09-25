@@ -1,6 +1,7 @@
 const square = document.querySelector('.square');
 const squareContainer = document.querySelector('.square-container');
 const btnStart = document.querySelector('#btn-start');
+const btnReStart = document.querySelector('#btn-restart');
 const colors = ['red', 'green', 'yellow', 'blue'];
 const src = ["https://s3.amazonaws.com/freecodecamp/simonSound1.mp3",
                   "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3",
@@ -56,6 +57,7 @@ const circleAnimation = () => {
   circleStart.classList.add('pushed');
   setTimeout(() => {
     circleStart.classList.remove('pushed');
+    
   }, 200);
 };
 // Function to get a random number between 0 and 3
@@ -68,6 +70,10 @@ const nextColor = () => {
 };
 // Function to generate the game sequence
 const nextSequence = (options = { withNewColor: true }) => {
+  //Re-active my reStart button
+  btnReStart.setAttribute('able', true);
+  btnReStart.removeAttribute('disabled');
+
   // if (withNewColor == undefined) withNewColor = true;
   let nextSequence = [];
   nextSequence = [...gameSequence];
@@ -87,6 +93,7 @@ const resetPlayerRound = () => {
   playerSequence = [];
   playerClicks = 0;
 };
+
 // Function to generate next sequence and show animation
 const nextRound = (options = { withNewColor: true }) => {
   // reset variables related to the player
@@ -160,13 +167,17 @@ const playerRound = () => {
         }, 300);
       }
     }
+    // Condition to show again the pattern
+    if(event.target.classList.contains('circle')){
+
+    }
   });
 };
 // Function to start the game
 const start = () => {
   // When we are in a game the button will be disabled
   btnStart.setAttribute('disabled', true);
- 
+  btnReStart.setAttribute('able', true);
   // Start the round
   setTimeout(nextRound,2000);
   // Start to listen click button events
@@ -179,4 +190,14 @@ btnStart.addEventListener('click', () => {
   circleAnimation();
   // Starts the game
   start();
+});
+
+btnReStart.addEventListener('click', () =>{
+  
+  circleAnimation();
+  btnReStart.setAttribute('disabled', true);
+
+  // Show game sequence animation
+  animationSequence();
+
 });
