@@ -114,7 +114,33 @@ class  SimonSays{
     startPlay(){
         this.createRandomPattern(); 
         this.showPattern();
+        document.querySelector('#startButton').setAttribute("hidden",true);
+        document.querySelector('#startOverButton').removeAttribute("hidden");
         
+    }
+
+    startOver(){
+        this.pattern=0;
+        this.step=0;
+        this.patternArray=[];
+        this.round = 0;
+        this.contStep = 0;
+        this.createRandomPattern(); 
+        this.showPattern();
+        document.querySelector('#round').innerHTML = this.step ;
+    }
+
+    endGame(){
+        this.pattern=0;
+        this.step=0;
+        this.patternArray=[];
+        this.round = 0;
+        this.contStep = 0;
+        document.querySelector('#round').innerHTML = this.step ;
+        document.querySelector('#startOverButton').setAttribute("hidden",true);
+        document.querySelector('#startButton').removeAttribute("hidden");
+        document.querySelector('#ContStep').innerHTML="";
+        alert('Game Ended');
     }
 
     getButton(number){
