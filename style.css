@@ -132,3 +132,37 @@ p {
   background: linear-gradient(45deg, rgb(103, 100, 100), rgb(193, 193, 219))
     border-box;
 }
+
+/* (A) BACKGROUND */
+#boxBack {
+  /* (A1) FULLSCREEN */
+  position: fixed; z-index: 999;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+ 
+  /* (A2) TRANSPARENT BACKGROUND */
+  background: rgba(0, 0, 0, 0.5);
+ 
+  /* (A3) HIDDEN BY DEFAULT */
+  display: none;
+}
+ 
+/* (A4) ADD THIS CSS CLASS TO SHOW */
+#boxBack.show { display: block; }
+ 
+/* (B) DIALOG BOX */
+#boxWrap {
+  /* (B1) CENTER ON SCREEN */
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+ 
+  /* (B2) DIMENSIONS */
+  min-width: 320px; max-width: 600px;
+  padding: 10px;
+ 
+  /* (B3) COLORS */
+  background: #fff;
+
+  text-align: center;
+}
