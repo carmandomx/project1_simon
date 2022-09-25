@@ -1,4 +1,10 @@
 console.log('Live reloading')
+//sounds
+let simonAudio = document.createElement("audio")
+simonAudio.setAttribute("src", "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3")
+
+let simonAudio2 = document.createElement("audio")
+simonAudio2.setAttribute("src", "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
 
 //sleep function
 function sleep(ms){
@@ -29,6 +35,7 @@ function userAnswer(){
     red_1.addEventListener('click',async function () {
             userAnswerClick=1;
             red_1.setAttribute('class','pattern_select_red');
+            simonAudio2.play()
             await sleep(200); 
             red_1.setAttribute('class','red');
         });
@@ -36,6 +43,7 @@ function userAnswer(){
     green_2.addEventListener('click',async function () {
             userAnswerClick=2;
             green_2.setAttribute('class','pattern_select_green');
+            simonAudio2.play()
             await sleep(200);   
             green_2.setAttribute('class','green'); 
         });
@@ -43,6 +51,7 @@ function userAnswer(){
     blue_3.addEventListener('click',async function () {
             userAnswerClick=3;
             blue_3.setAttribute('class','pattern_select_blue');
+            simonAudio2.play()
             await sleep(200); 
             blue_3.setAttribute('class','blue'); 
         });
@@ -50,6 +59,7 @@ function userAnswer(){
     yellow_4.addEventListener('click',async function () {
             userAnswerClick=4;
             yellow_4.setAttribute('class','pattern_select_yellow');
+            simonAudio2.play()
             await sleep(200);  
             yellow_4.setAttribute('class','yellow');
         });
@@ -74,9 +84,10 @@ start.addEventListener('click',async function () {
 
     //we create the answers for the 20 levels
     for(i=0; i < 20; i++) answers[i]= getRandomInt(1, 5)
+
+    await sleep(300);
    
     //The game starts here
-
     //"i" is the level
     i =0;
     //This "while" prevents us from going over 20 levels
@@ -89,24 +100,28 @@ start.addEventListener('click',async function () {
             switch (answers[j]){
                 case 1:
                 red_1.setAttribute('class','pattern_select_red');
+                simonAudio.play()
                 await sleep(500); 
                 red_1.setAttribute('class','red');
                 break;
 
                 case 2:
                 green_2.setAttribute('class','pattern_select_green');
+                simonAudio.play()
                 await sleep(500);   
                 green_2.setAttribute('class','green'); 
                 break;
 
                 case 3:
                 blue_3.setAttribute('class','pattern_select_blue');
+                simonAudio.play()
                 await sleep(500); 
                 blue_3.setAttribute('class','blue'); 
                 break;
 
                 case 4:
                 yellow_4.setAttribute('class','pattern_select_yellow');
+                simonAudio.play()
                 await sleep(500);  
                 yellow_4.setAttribute('class','yellow');
                 break;
