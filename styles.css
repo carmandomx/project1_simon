@@ -110,7 +110,7 @@ br {
     align-items: center;
     justify-content: space-between;
     background-color: #485B73;
-    border-radius: 2%;
+    border-radius: 10%;
     height: 4rem;
     text-align: center;
 }
@@ -139,6 +139,12 @@ br {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+.level:active {
+    background-color: #121B26;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 /* ----------------- <simon> -------------------*/
@@ -263,6 +269,12 @@ background-color: #485B73;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+}
+
+#start:active {
+    background-color: #121B26;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
 
 #count {

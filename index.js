@@ -65,10 +65,17 @@ const buttonsProperties = {
     },
 };
 
+const difficulty = {
+    easy: "easy",
+    normal: "normal",
+    hard: "hard",
+}
+
 const game =  {
     level: 1,
     state: state.start,
     isStarted: false,
+    difficulty: difficulty,
 }
 
 function randomButtonColor(){
@@ -115,6 +122,32 @@ buttonStart.addEventListener("click", function(){
         game.state = true;
     };
 });
+const menuStart = document.querySelector("#start");
+menuStart.addEventListener("click", function(){ 
+    callBackSound(audioStart);
+    if (game.state) {
+        game.state = false;
+    } else {
+        game.state = true;
+    };
+});
+
+const easy = document.querySelector("#easy");
+easy.addEventListener("click", function(){
+    game.difficulty = difficulty.easy;
+    console.log(game.difficulty)
+});
+const normal = document.querySelector("#normal");
+normal.addEventListener("click", function(){
+    game.difficulty = difficulty.normal;
+    console.log(game.difficulty)
+});
+const hard = document.querySelector("#hard");
+hard.addEventListener("click", function(){
+    game.difficulty = difficulty.hard;
+    console.log(game.difficulty)
+});
+
 
 let count = 0;
 
