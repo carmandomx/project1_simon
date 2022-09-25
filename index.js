@@ -132,17 +132,20 @@ menuStart.addEventListener("click", function(){
     };
 });
 
-const easy = document.getElementsByid("easy");
-level.addEventListener("click", function(){
+const easy = document.querySelector("#easy");
+easy.addEventListener("click", function(){
     game.difficulty = difficulty.easy;
+    console.log(game.difficulty)
 });
-const normal = document.getElementsByid("normal");
-level.addEventListener("click", function(){
+const normal = document.querySelector("#normal");
+normal.addEventListener("click", function(){
     game.difficulty = difficulty.normal;
+    console.log(game.difficulty)
 });
-const hard = document.getElementsByid("hard");
-level.addEventListener("click", function(){
+const hard = document.querySelector("#hard");
+hard.addEventListener("click", function(){
     game.difficulty = difficulty.hard;
+    console.log(game.difficulty)
 });
 
 
