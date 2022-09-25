@@ -194,6 +194,7 @@ btnStart.addEventListener('click', () => {
 
 btnReStart.addEventListener('click', () =>{
   
+  //If I use the reStart one time, I put it disable
   circleAnimation();
   btnReStart.setAttribute('disabled', true);
 
