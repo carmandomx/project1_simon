@@ -50,7 +50,8 @@ let sublevels = 0;
 
 //Start
 const playGame = () => {
-  document.querySelector('#tittle').textContent = 'Simon says...'; //set the title text back to Simon says when restarting the game
+  document.querySelector('#tittle').textContent = 'Simon says...'; 
+  document.querySelector('#startBtn').textContent = 'Start';
   sequence = new Array(stages);
   sequence = sequence
     .fill(0)
@@ -129,9 +130,8 @@ const userColorClick = (onClick) => {
       //If we win.
       if (levels === stages) {
         console.log("Ganaste!");
-        /*
-        Warnings here!!!
-        */
+        document.querySelector('#tittle').textContent = 'You win!';
+        document.querySelector('#startBtn').textContent = 'Play again';
         endGame();
       } else {
         //reset it.
