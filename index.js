@@ -70,6 +70,10 @@ const nextColor = () => {
 };
 // Function to generate the game sequence
 const nextSequence = (options = { withNewColor: true }) => {
+  //Re-active my reStart button
+  btnReStart.setAttribute('able', true);
+  btnReStart.removeAttribute('disabled');
+
   // if (withNewColor == undefined) withNewColor = true;
   let nextSequence = [];
   nextSequence = [...gameSequence];
@@ -89,14 +93,7 @@ const resetPlayerRound = () => {
   playerSequence = [];
   playerClicks = 0;
 };
-//Function to show the sequence
-const showSequence = () =>{
-  gameSequence.forEach((element, i) => {
-    setTimeout(() => {
-      squareAnimation(element);
-    }, 800 * (i + 1));
-  });
-}
+
 // Function to generate next sequence and show animation
 const nextRound = (options = { withNewColor: true }) => {
   // reset variables related to the player
@@ -201,6 +198,6 @@ btnReStart.addEventListener('click', () =>{
   btnReStart.setAttribute('disabled', true);
 
   // Show game sequence animation
-  showSequence();
+  animationSequence();
 
 });
