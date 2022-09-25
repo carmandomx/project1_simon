@@ -1,3 +1,4 @@
+// ------------------------- Seting audio effects ------------------------------------
 const audioGreen = new Audio("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3");
 audioGreen.autoplay = true;
 
@@ -13,10 +14,11 @@ audioBlue.autoplay = true;
 const audioStart = new Audio ("./media/sounds/button-start.mp3");
 audioStart.autoplay = true;
 
+// --------------------------- Setting var, arr, obj --------------------------------------
 const state = {
     win: -1,
     lose: -2,
-    start: 0,
+    start: false,
     userPlaying: 1, //When user is cliking
     computerPlaying: 2, //When computer is drawin the patterns
     finish: 3,
@@ -105,29 +107,29 @@ buttonYellow.addEventListener("click", function(){ callBackSound(audioYellow)});
 const buttonBlue = document.querySelector("#b-blue");
 buttonBlue.addEventListener("click", function(){ callBackSound(audioBlue)});
 const buttonStart = document.querySelector("#circle");
-
-
-buttonStart.addEventListener("click", function(){ callBackSound(audioStart)});
+buttonStart.addEventListener("click", function(){ 
+    callBackSound(audioStart);
+    if (game.state) {
+        game.state = false;
+    } else {
+        game.state = true;
+    };
+});
 
 let count = 0;
 
 function main () {
     setTimeout( function () {
         console.log("Async Programming");
-
     }, 5000);
 
     //Async Programming like a for infinity loop without blocking my page.
     setInterval( function () {
-        computerPressRndColor(randomButtonColor());
-        // console.log(randomButtonColor());
-        switch (game.state) {
-            case state.userPlaying:
-                break;
-            case state.computerPlaying:
-
-                break;
+        if (game.state) {
+            computerPressRndColor(randomButtonColor());
         }
+
+        // console.log(randomButtonColor());
     }, 1000 );
 };
 
