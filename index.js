@@ -84,7 +84,10 @@ class  SimonSays{
             this.contStep +=1;
             let currentRound = this.step + 1; 
             document.querySelector('#ContStep').innerHTML = "Your Turn: " + this.contStep + " / " + currentRound;
-            if(this.step===this.pattern){
+            if(this.step===this.pattern && currentRound===2){
+                this.finished();
+            }
+            else if(this.step===this.pattern){
                 this.step=this.step+1;
                 this.contStep = 0;
                 this.resetPattern();
@@ -120,6 +123,8 @@ class  SimonSays{
     }
 
     startOver(){
+        document.querySelector("#myModal").setAttribute("style","display:none");
+        console.log('empezo');
         this.pattern=0;
         this.step=0;
         this.patternArray=[];
@@ -127,7 +132,7 @@ class  SimonSays{
         this.contStep = 0;
         this.createRandomPattern(); 
         this.showPattern();
-        document.querySelector('#round').innerHTML = this.step ;
+        document.querySelector('#round').innerHTML = this.step+1 ;
     }
 
     endGame(){
@@ -169,6 +174,21 @@ class  SimonSays{
         this.pattern=0;
         this.contStep = 0;
         this.showPattern();
+    }
+
+    finished() {// FUCTION TO CALL TO THE WINNER MODAL DISPLAY
+        var modal = document.querySelector("#myModal");
+        this.winSound.play();
+        modal.removeAttribute("hidden");
+        setTimeout(() => { modal.style.display = "block";}, 250);  
+        this.pattern=0;
+        this.step=1;
+        this.patternArray=[];
+    }
+
+    playAgain(){
+        location.reload();
+        setTimeout(() =>{this.startOver()},250);
     }
 
     
