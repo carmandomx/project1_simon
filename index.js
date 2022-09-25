@@ -39,10 +39,11 @@ class  SimonSays{
     }
 
     showPattern(){
+        setTimeout( () => document.querySelector('#ContStep').innerHTML = "Wait for the computer",  500)
         this.ableButtons();
         let index=0;
         document.querySelector('#round').innerHTML = this.step + 1;
-        document.querySelector('#round2').innerHTML = this.step + 1;
+       /*  document.querySelector('#round2').innerHTML = this.step + 1; */
         let patternTimer = setInterval(() => {
             const button = this.getButton(this.patternArray[index]);
             this.activateButton(button);
@@ -53,6 +54,8 @@ class  SimonSays{
                 clearInterval(patternTimer);
             }
         }, 1000);
+        
+        
 
     }
 
@@ -63,6 +66,7 @@ class  SimonSays{
     }
 
     ableButtons(){
+        
         for(let i=0;i<4;i++){
             this.getButton(i).removeAttribute('disabled');
         }
@@ -78,17 +82,17 @@ class  SimonSays{
         if(this.patternArray[this.pattern]===color){
             this.playSoundButton(this.patternArray[this.pattern]);
             this.contStep +=1;
-            document.querySelector('#ContStep').innerHTML = this.contStep;
+            let currentRound = this.step + 1; 
+            document.querySelector('#ContStep').innerHTML = "Your Turn: " + this.contStep + " / " + currentRound;
             if(this.step===this.pattern){
                 this.step=this.step+1;
                 this.contStep = 0;
-                setTimeout( () => document.querySelector('#ContStep').innerHTML = 0,  1000)
                 this.resetPattern();
             }else{
                 this.pattern++;
             }
         }else{
-            document.querySelector('#ContStep').innerHTML = 0;
+            document.querySelector('#ContStep').innerHTML = "Try again";
             this.playWrongButton();
             this.resetPattern();
         }
@@ -108,7 +112,6 @@ class  SimonSays{
     }
 
     startPlay(){
-        document.querySelector('#round').innerHTML = 0;
         this.createRandomPattern(); 
         this.showPattern();
         
