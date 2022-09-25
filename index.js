@@ -1,6 +1,7 @@
 const square = document.querySelector('.square');
 const squareContainer = document.querySelector('.square-container');
 const btnStart = document.querySelector('#btn-start');
+const btnReStart = document.querySelector('#btn-restart');
 const colors = ['red', 'green', 'yellow', 'blue'];
 
 let level = 0;
@@ -26,6 +27,7 @@ const circleAnimation = () => {
   circleStart.classList.add('pushed');
   setTimeout(() => {
     circleStart.classList.remove('pushed');
+    
   }, 200);
 };
 // Function to get a random number between 0 and 3
@@ -57,6 +59,14 @@ const resetPlayerRound = () => {
   playerSequence = [];
   playerClicks = 0;
 };
+//Function to show the sequence
+const showSequence = () =>{
+  gameSequence.forEach((element, i) => {
+    setTimeout(() => {
+      squareAnimation(element);
+    }, 800 * (i + 1));
+  });
+}
 // Function to generate next sequence and show animation
 const nextRound = (options = { withNewColor: true }) => {
   // reset variables related to the player
@@ -65,11 +75,7 @@ const nextRound = (options = { withNewColor: true }) => {
   // Get game sequence
   gameSequence = nextSequence(options);
   // Show game sequence animation
-  gameSequence.forEach((element, i) => {
-    setTimeout(() => {
-      squareAnimation(element);
-    }, 800 * (i + 1));
-  });
+  showSequence();
 };
 // Variable to know if the sequence was repeated correctly
 let sequenceOK = false;
@@ -110,12 +116,17 @@ const playerRound = () => {
         }, 300);
       }
     }
+    // Condition to show again the pattern
+    if(event.target.classList.contains('circle')){
+
+    }
   });
 };
 // Function to start the game
 const start = () => {
   // When we are in a game the button will be disabled
   btnStart.setAttribute('disabled', true);
+  btnReStart.setAttribute('able', true);
   // Start the round
   nextRound();
   // Start to listen click button events
@@ -127,4 +138,14 @@ btnStart.addEventListener('click', () => {
   circleAnimation();
   // Starts the game
   start();
+});
+
+btnReStart.addEventListener('click', () =>{
+  
+  circleAnimation();
+  btnReStart.setAttribute('disabled', true);
+
+  // Show game sequence animation
+  showSequence();
+
 });
