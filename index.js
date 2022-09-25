@@ -17,6 +17,8 @@ let level = 0;
 let gameSequence = [];
 // Variable to store the clicked colors (player)
 let playerSequence = [];
+// Variable to set the Hard-mode
+let hardMode = 0;
 
 
 const vibration = [
@@ -168,6 +170,23 @@ const playerRound = () => {
           }
         }
       } else {
+        //If the user fail in the hard mode, I reStart all the game
+        if(hardMode){
+          shakeError();
+          resetPlayerRound();
+          
+          setTimeout(() => {
+            //Gives an error sign that the pattern was incorrect
+            shakeError();
+            //reset all
+            gameSequence = [];
+            level = 1;
+            resetPlayerRound();
+            //Show the player again the sequence
+            setTimeout(nextRound,1000);
+          }, 300);
+        }
+        else{
         // TODO: UserStory4 - alert the user that he failed, reset round and play game sequence again without adding a new color if hard mode is disabled
         // setTimeout for the animation of the button when player fails
         
@@ -180,6 +199,7 @@ const playerRound = () => {
           //Show the player again the sequence
           setTimeout(animationSequence,1000);
         }, 300);
+      }
       }
     }
   });
@@ -228,8 +248,8 @@ btnReStart.addEventListener('click', () =>{
 //If you change the state, the play will start again
 toggleHardmode.onchange = function() {
   if(toggleHardmode.checked) {
-    
+    hardMode = 1;
   } else {
-
+    hardMode = 0;
   }
 };
