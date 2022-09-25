@@ -16,44 +16,51 @@
         <h1>THE SIMON GAME</h1>
     </header>
     <div class="game">
-        <div class="left">
-            <h2>Difficulty</h2>
-            <div class="difficulty">
-                <button type="button" class="level">
-                    EASY
-                </button>
-                <button type="button" class="level">
-                    NORMAL
-                </button>
-                <button type="button" class="level">
-                    HARD
-                </button>
+
+        <div class="leftparent">
+            <div class="left">
+                <h2>Difficulty</h2>
+                <div class="difficulty">
+                    <button type="button" class="level">
+                        EASY
+                    </button>
+                    <button type="button" class="level">
+                        NORMAL
+                    </button>
+                    <button type="button" class="level">
+                        HARD
+                    </button>
+                </div>
+                <br>
+                <h2>Historie Score</h2>
+                <div class="historie">
+                </div>
             </div>
-            <br>
-            <h2>Historie Score</h2>
-            <div class="historie">
+
+        </div>
+
+        <div class="simonparent">
+            <div class="simon">
+                <button id="circle">
+                    circle
+                </button>
+                <button id="b-green">
+                    green
+                </button>
+                <button id="b-red">
+                    red
+                </button>
+                <button id="b-blue">
+                    blue
+                </button>
+                <button id="b-yellow">
+                    yellow
+                </button>
             </div>
         </div>
 
-        <div class="simon">
-            <button id="circle">
-                circle
-            </button>
-            <button id="b-green">
-                green
-            </button>
-            <button id="b-red">
-                red
-            </button>
-            <button id="b-blue">
-                blue
-            </button>
-            <button id="b-yellow">
-                yellow
-            </button>
-        </div>
-
-        <div class="right">
+        <div class="rightparent">
+            <div class="right">
             <h2>Lives</h2>
             <div id="lives">
             </div>
@@ -62,10 +69,13 @@
                 <button type="button" id="start">Start</button> 
                 <h2>Count</h2>
                 <div id="count">
-                </div>
+                </div> <!--main end-->
             </div>
         </div>
-    </div>   
+    </div>
+
+        
+    </div> <!--end of game container-->
     <!-- Good luck! -->
 
     <script src="./index.js"></script>
