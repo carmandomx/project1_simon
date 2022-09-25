@@ -12,15 +12,31 @@ const startBtn = document.querySelector('.btnStart');
 const head = document.getElementById("upper-text");
 const container = document.querySelector('.container');
 
-/*Function that starts the game.*/
+//Function that starts the game.
 function startGame() {
   startBtn.classList.add('hidden'); /*The start button is hidden.*/
   nextLevel(); /*We go from level 0 which is the start of the game to level 1 where the game begins.*/
 }
 
+//Reset game function.
+function resetGame(txt) { //Restore all the initial values and restart the game.
+    alert(txt);
+    level = 0;
+    autoPattern = [];
+    inputPattern = [];
+    startBtn.classList.remove('hidden');
+    head.textContent = 'Simon Game';
+    container.classList.add('unclickable');
+  }
+
 //Function to execute the process of a turn.
 function processTurn(frame) {
   const index = inputPattern.push(frame) - 1;
+
+  if (inputPattern[index] !== autoPattern[index]) { //If the input pattern is different to the auto pattern the player will lose.
+    resetGame('Game Over! You got the pattern wrong. Try again!');
+    return;
+  }
 
   if (inputPattern.length === autoPattern.length) { //If the patterns are the same, we proceed to the next level.
     inputPattern = [];
