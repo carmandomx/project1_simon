@@ -1,5 +1,6 @@
 html, body{ height: 100%;}
 
+/*All this is to place the interface*/
 body{
     margin: 0%;
     font-family: 'Times New Roman';
@@ -44,7 +45,32 @@ body{
     vertical-align: middle;
 }
 
-.square{
+
+
+/*These are the initial states of the buttons*/
+
+.red{ background-color: #cc0000;
+    border-radius: 5px;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+.blue{ background-color: #0000cc;
+    border-radius: 5px;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;}
+
+.green{ background-color: #009933;
+    border-radius: 5px;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+.yellow{ background-color: #e6e600;
     border-radius: 5px;
     border-color: white;
     width: 150px;
@@ -52,14 +78,34 @@ body{
     cursor: pointer;
 }
 
-.square:active, .active{
-    filter: brightness(130%);
-}
 
-.red{ background-color: #EE6352;}
-.blue{ background-color: #08B2E3;}
-.green{ background-color: #57A773;}
-.yellow{ background-color: #FFDF64;}
+/*These are the "special" states of the buttons*/
+
+.pattern_select_red{background-color:	#ff8080;
+    border-radius: 5px;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+.pattern_select_green{background-color:	#5cd65c;
+    border-radius: 5px;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;}
+.pattern_select_blue{background-color:	#8080ff;
+    border-radius: 5px;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;}
+.pattern_select_yellow{background-color:	#ffff99;
+    border-radius: 5px;
+    border-color: white;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;}
 
 .footer{
     font-size: large;
