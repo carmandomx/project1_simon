@@ -72,6 +72,13 @@ body {
     background-color: #f4d13e;
 }
 
+.btnYellow:active, .btnYellow.action {
+    box-shadow: 0 0 0 1px #fff23d inset, 
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #fff23d;
+    transform: translateY(10px);
+}
+
 .btnBlue {
     border-style: none;
     letter-spacing: 1px;
@@ -83,6 +90,13 @@ body {
 
 .btnBlue:hover {
     background-color: #6ea3d5;
+}
+
+.btnBlue:active, .btnBlue.action {
+    box-shadow: 0 0 0 1px #2bbcff inset, 
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #2bbcff;
+    transform: translateY(10px);
 }
 
 .btnRed {
@@ -98,6 +112,13 @@ body {
     background-color: #e47e83;
 }
 
+.btnRed:active, .btnRed.action {
+    box-shadow: 0 0 0 1px #ff5c36 inset, 
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: #ff5c36;
+    transform: translateY(10px);
+}
+
 .btnAqua {
     border-style: none;
     letter-spacing: 1px;
@@ -109,6 +130,13 @@ body {
 
 .btnAqua:hover {
     background-color: #51dad3;
+}
+
+.btnAqua:active, .btnAqua.action {
+    box-shadow: 0 0 0 1px aqua inset, 
+    0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 0 0 1px rgba(0, 0, 0, 0.4);
+    background-color: aqua;
+    transform: translateY(10px);
 }
 
 .btnStart {
@@ -131,4 +159,26 @@ body {
 .btnStart {
     justify-content: center;
 
+}
+
+/*Hidden Features*/
+.hidden {
+    display: none !important;
+  }
+
+/*Unclickable Feature*/
+.unclickable {
+    pointer-events: none;
+}
+  
+/*Hover for Start Button */
+.btnStart:hover{
+    cursor: pointer;
+    background-color: rgb(41, 41, 41);
+}
+  
+/*Pressioning Buttons*/
+.frame:active, .btn:active, .pressed {
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
