@@ -19,13 +19,13 @@ function callBackSound(audioObj) {
     audioObj.play();
 }
 
-const buttonGreen = document.querySelector(".b-green");
+const buttonGreen = document.querySelector("#b-green");
 buttonGreen.addEventListener("click", function () { callBackSound(audioGreen) });
-const buttonRed = document.querySelector(".b-red");
+const buttonRed = document.querySelector("#b-red");
 buttonRed.addEventListener("click", function () { callBackSound(audioRed) });
-const buttonYellow = document.querySelector(".b-yellow");
+const buttonYellow = document.querySelector("#b-yellow");
 buttonYellow.addEventListener("click", function(){ callBackSound(audioYellow)});
-const buttonBlue = document.querySelector(".b-blue");
+const buttonBlue = document.querySelector("#b-blue");
 buttonBlue.addEventListener("click", function(){ callBackSound(audioBlue)});
-const buttonStart = document.querySelector(".circle");
+const buttonStart = document.querySelector("#circle");
 buttonStart.addEventListener("click", function(){ callBackSound(audioStart)});
