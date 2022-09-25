@@ -117,3 +117,18 @@ p {
   background: linear-gradient(45deg, rgb(103, 100, 100), rgb(193, 193, 219))
     border-box;
 }
+
+#btn-restart {
+  display: none;
+}
+#btn-restart[able] {
+  display: unset;
+}
+
+#btn-restart[disabled] {
+  display: unset;
+  
+  border: 5px solid rgba(114, 110, 110, 0.7);
+  background: linear-gradient(45deg, rgb(103, 100, 100), rgb(193, 193, 219))
+    border-box;
+}
