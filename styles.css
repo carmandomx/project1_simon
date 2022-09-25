@@ -52,89 +52,15 @@ br {
     justify-content: center;
 }
 
-.ads {
-    position: absolute;
-    background-color: white;
-    height: 15rem;
-    width: 20rem;
-    margin-left: 83%;
-    margin-top: 34%;
-}
-
-/* ----------------- <simon> -------------------*/
-
-
-.b-green {
-    grid-area: b-green;
-    background-color: #038C73;
-    border-top-left-radius: 20%;
-    height: 17rem;
-    width: 17rem;
-}
-
-.b-green:active{
-    background: #02ffd1;
-}
-
-.b-red {
-    grid-area: b-red;
-    background-color: #9a250a;
-    border-top-right-radius: 20%;
-    height: 17rem;
-    width: 17rem;
-}
-.b-red:active {
-    background-color: #f94d27;
-}
-
-.b-blue {
-    grid-area: b-blue;
-    background-color: #055b91;   
-    border-bottom-right-radius: 20%;
-    height: 17rem;
-    width: 17rem;
-}
-.b-blue:active {
-    background-color: #099df9;   
-}
-
-.b-yellow {
-    grid-area: b-yellow;
-    background-color: #8a7f09;
-    border-bottom-left-radius: 20%;
-    height: 17rem;
-    width: 17rem;
-}
-
-.b-yellow:active {
-    background-color: #ffea06;
-}
-
-
-.circle {
-    position:absolute;
-    background: rgb(255, 255, 255);
-    border-radius: 50%;
-    margin: 6%;
-    width: 20rem;
-    height: 20rem;
-    color: #0D0D0D;
-    text-align: center;
-}
-
-.circle:active {
-    background-color: #cccccc;
-}
-
 /* ----------------- <left> -------------------*/
 
 .difficulty {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     margin-left: 25%;
     background-color: #485B73;
-    border-radius: 5%;
+    border-radius: 2%;
     height: 4rem;
     text-align: center;
 }
@@ -147,9 +73,92 @@ br {
     text-align: center;
 }
 
+/* ----------------- <difficulty> -------------------*/
+
+.level {
+    flex: 1;
+    background-color: #06090D;
+    border: none;
+    border-radius: 30%;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    margin: 0% 5% 0% 5%;
+    width: 1rem;
+    height: 3rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* ----------------- <simon> -------------------*/
+
+
+#b-green {
+    grid-area: b-green;
+    background-color: #038C73;
+    border-top-left-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+}
+
+#b-green:active{
+    background: #02ffd1;
+}
+
+#b-red {
+    grid-area: b-red;
+    background-color: #9a250a;
+    border-top-right-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+}
+#b-red:active {
+    background-color: #f94d27;
+}
+
+#b-blue {
+    grid-area: b-blue;
+    background-color: #055b91;   
+    border-bottom-right-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+}
+#b-blue:active {
+    background-color: #099df9;   
+}
+
+#b-yellow {
+    grid-area: b-yellow;
+    background-color: #8a7f09;
+    border-bottom-left-radius: 20%;
+    height: 17rem;
+    width: 17rem;
+}
+
+#b-yellow:active {
+    background-color: #ffea06;
+}
+
+
+#circle {
+    position:absolute;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    margin: 6%;
+    width: 20rem;
+    height: 20rem;
+    color: #0D0D0D;
+    text-align: center;
+}
+
+#circle:active {
+    background-color: #cccccc;
+}
+
 /* ----------------- <right> -------------------*/
 
-.lives {
+#lives {
     margin-right: 20%;
     background-color: #485B73;
     border-radius: 5%;
@@ -157,23 +166,30 @@ br {
     text-align: center;
 }
 
-.main {
+#main {
     display: flex;
-}
-
-/* ----------------- <difficulty> -------------------*/
-
-.level {
-    flex: 1;
-    background: white;
-    width: 1rem;
-    height: 1rem;
-    border-color: #0D0D0D;
-    border: 5px;
+    flex-direction: column;
+    margin-right: 20%;
 }
 
 /* ----------------- <main> -------------------*/
 
-.start {
-    
+#start {
+    background-color: #485B73;
+    border: none;
+    border-radius: 3%;
+    color: white;
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#count {
+    background-color: #485B73;
+    border-radius: 5%;
+    width: 10rem;
+    height: 5rem;
 }
