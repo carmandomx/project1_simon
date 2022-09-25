@@ -18,13 +18,15 @@ audioStart.autoplay = true;
 const state = {
     win: -1,
     lose: -2,
-    start: false,
+    start: false, //Indicates when the game is running
     userPlaying: 1, //When user is cliking
     computerPlaying: 2, //When computer is drawin the patterns
     finish: 3,
-}
+};
 
 const buttons = ["green", "red", "yellow", "blue"];
+
+//Setting selflight colors
 const buttonsProperties = {
     green: {
         colorPressed: "#02ffd1",
@@ -69,21 +71,24 @@ const difficulty = {
     easy: "easy",
     normal: "normal",
     hard: "hard",
-}
+};
 
+//Game settings
 const game =  {
     level: 1,
     state: state.start,
     isStarted: false,
     difficulty: difficulty,
-}
+};
 
+//Getting 1 random color to add...
 function randomButtonColor(){
     const color =  buttons[Math.floor(Math.random() * 4)];
     const buttonColor =  buttonsProperties[color];
     return buttonColor;
 }
 
+//Basic function to make de pc highligh a rndon color
 function computerPressRndColor(){
     const rndBtnColor = randomButtonColor();
     const { htmlElemt } = rndBtnColor; 
@@ -92,18 +97,20 @@ function computerPressRndColor(){
         htmlElemt.style.background = rndBtnColor.color;
     }, 250);
     console.log(htmlElemt);
-}
+};
 
 function callBackSound(audioObj) {
     audioObj.load();
     audioObj.play();
-}
+};
 
-
+//Initializing our colors to highligh
 buttonsProperties.green.init();
 buttonsProperties.red.init();
 buttonsProperties.yellow.init();
 buttonsProperties.blue.init();
+
+//-----Setting events-----
 
 const buttonGreen = document.querySelector("#b-green");
 buttonGreen.addEventListener("click", function () { callBackSound(audioGreen) });
@@ -114,6 +121,7 @@ buttonYellow.addEventListener("click", function(){ callBackSound(audioYellow)});
 const buttonBlue = document.querySelector("#b-blue");
 buttonBlue.addEventListener("click", function(){ callBackSound(audioBlue)});
 const buttonStart = document.querySelector("#circle");
+
 buttonStart.addEventListener("click", function(){ 
     callBackSound(audioStart);
     if (game.state) {
