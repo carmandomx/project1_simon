@@ -47,8 +47,6 @@ const stages = 20;
 const numberPGPY = 4;
 let levels = 0;
 let sublevels = 0;
-let score = 0;
-let step = 0;
 
 //Start
 const playGame = () => {
@@ -61,9 +59,19 @@ const playGame = () => {
   levels = 0;
   sublevels = 0;
   startBtn.classList.add("hideIt");
+  const startOverBtn = document.querySelector("#startOverBtn");
+  startOverBtn.classList.remove("hideIt");
   document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
   lightUpPattern();
 };
+
+//start over 
+const startOver = () => {
+  levels = 0;
+  sublevels = 0;
+  document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
+  lightUpPattern();
+}
 
 //End
 const endGame = () => {

@@ -135,3 +135,13 @@ section > #startBtn:hover {
 .score {
   margin: 2vh;
 }
+
+.startOver{
+  margin: 15px;
+  background-color: black;
+  color: white;
+  width: 250px;
+  height: 100px;
+  border-radius: 15px;
+  transition: all 0.3s ease 0s;
+}
