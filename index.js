@@ -61,7 +61,7 @@ const playGame = () => {
   startBtn.classList.add("hideIt");
   const startOverBtn = document.querySelector("#startOverBtn");
   startOverBtn.classList.remove("hideIt");
-  document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
+  document.querySelector("#js-score").textContent = `Level ${levels + 1} of ${stages}`;
   lightUpPattern();
 };
 
