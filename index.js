@@ -33,7 +33,7 @@ soundStart.addEventListener("click", function () {
   //tagAudio.play();
 });
 
-//whitch color was choosen
+//which color was chosen
 const numberToColor = (index) => {
   if (index === 0) return "purple";
   if (index === 1) return "greenyellow";
@@ -41,12 +41,14 @@ const numberToColor = (index) => {
   if (index === 3) return "yellow";
 };
 
-//simon Say
+//simon Says
 let sequence = [];
 const stages = 20;
 const numberPGPY = 4;
 let levels = 0;
 let sublevels = 0;
+let score = 0;
+let step = 0;
 
 //Start
 const playGame = () => {
@@ -59,6 +61,7 @@ const playGame = () => {
   levels = 0;
   sublevels = 0;
   startBtn.classList.add("hideIt");
+  document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
   lightUpPattern();
 };
 
@@ -123,11 +126,13 @@ const userColorClick =    (onClick) => {
   if (caseColor === sequence[sublevels]) {
     //continue the event.
     sublevels++;
+ 
     //next stage.
     if (sublevels > levels) {
       //next step.
       levels++;
-
+      document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
+      
       //If we win.
       if (levels === stages) {
         console.log("Ganaste!");
@@ -139,6 +144,7 @@ const userColorClick =    (onClick) => {
         sublevels = 0;
         //next pattern in screen.
         setTimeout(lightUpPattern, mediumWait);
+        
       }
     }
   } else {
@@ -148,9 +154,9 @@ const userColorClick =    (onClick) => {
       setTimeout(function(){
         levels = 0;
         sublevels = 0;
+        document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
         lightUpPattern();
       },1000);
-
 
 
 
