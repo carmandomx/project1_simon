@@ -147,7 +147,7 @@ const userColorClick =    (onClick) => {
       //timeout
       setTimeout(function(){
         lightUpPattern();
-      },2000);
+      },1000);
 
 
 
