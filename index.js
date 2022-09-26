@@ -146,8 +146,11 @@ const userColorClick =    (onClick) => {
       document.querySelector('#tittle').textContent = 'Error! Try again.';
       //timeout
       setTimeout(function(){
+        levels = 0;
+        sublevels = 0;
         lightUpPattern();
-      },2000);
+      },1000);
+
 
 
 
