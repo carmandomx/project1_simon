@@ -85,7 +85,7 @@ class  SimonSays{
             this.contStep +=1;
             let currentRound = this.step + 1; 
             document.querySelector('#ContStep').innerHTML = "Your Turn: " + this.contStep + " / " + currentRound;
-            if(this.step===this.pattern && currentRound===2){
+            if(this.step===this.pattern && currentRound===20){
                 this.finished();
             }
             else if(this.step===this.pattern){
