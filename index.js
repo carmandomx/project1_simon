@@ -10,8 +10,6 @@ simonAudio2.setAttribute("src", "https://s3.amazonaws.com/freecodecamp/simonSoun
 let wrong = new Audio("sounds/wrong.mp3");
 wrong.volume = 0.3;
 
-let started = false; // boolean variable to know the game status
-
 let steps; // this counter will show how many steps to click are on each level
 
 //sleep function
@@ -86,9 +84,7 @@ function userAnswer(){
 //The game starts when you click "start"
 start.addEventListener('click',async function () {
     
-    started = true; // to know when we started a game, allows to enter the while loop
-    document.querySelector(".tittle").innerHTML = "Simon's Game";
-
+    
     //This array will save the answers of the 20 levels
     const gamePattern = [];
     
@@ -101,7 +97,8 @@ start.addEventListener('click',async function () {
     i =0;
     
     //This "while" prevents us from going over 20 levels
-    while( i < 20 && started === true){
+    while( i < 20 ){
+        document.querySelector(".tittle").innerHTML = "Simon's Game";
         
         steps = 1+i; // to know how many clickable steps are per level
         document.querySelector(".tittle").innerHTML = ("Level: " + steps);
@@ -157,13 +154,12 @@ start.addEventListener('click',async function () {
             //If the user makes a mistake in any step, the "for" is broken without having leveled up
             if(userAnswerClick != gamePattern[j]){
                 wrong.play(); // plays sound of error
-                document.querySelector(".tittle").innerHTML = "Game Over, Press Start To Replay";
+                document.querySelector(".tittle").innerHTML = "You missed, try again!";
                 // changing the page style to inform of the error
                 document.body.style.backgroundColor = "red";
                 await sleep(500)
                 document.body.style.backgroundColor = "white";
-                // reseting conditions of intial game
-                startOver();
+
 
                 break;
             }
@@ -181,10 +177,3 @@ start.addEventListener('click',async function () {
         }
     }
 );
-
-
-// reseting initial conditions
-function startOver() {
-     // so the game doesn't enter the while loop 
-    started = false;
-  }
