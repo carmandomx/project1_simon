@@ -44,6 +44,12 @@ body {
     cursor: pointer;
 }
 
+
+
+/* COLORED BUTTONS */
+
+=======
+
 #green {
     background-color: #90be6d;
 
@@ -59,4 +65,29 @@ body {
 
 #blue {
     background-color: #00a8e8;
+
+}
+
+.buttons {
+    width: 450px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 0.5em;
+}
+
+.buttons button {
+    background: #0d3b66;
+    color: white;
+    border: 1px solid black;
+    padding: 1em 2em;
+    font-size: 1em;
+    transition: all 0.25s;
+    box-shadow: 0 0.5em 0.5em -0.4em #0d3b66;
+    margin-bottom: 1em;
+}
+
+.buttons button:hover {
+    transform: translateY(-0.25em);
+    cursor: pointer;
+
 }
