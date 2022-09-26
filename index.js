@@ -12,6 +12,8 @@ wrong.volume = 0.3;
 
 let started = false; // boolean variable to know the game status
 
+let steps; // this counter will show how many steps to click are on each level
+
 //sleep function
 function sleep(ms){
     return new Promise(resolve =>setTimeout(resolve, ms));
@@ -100,7 +102,10 @@ start.addEventListener('click',async function () {
     
     //This "while" prevents us from going over 20 levels
     while( i < 20 && started === true){
-    
+        
+        steps = 1+i; // to know how many clickable steps are per level
+        document.querySelector(".tittle").innerHTML = ("Level: " + steps);
+       
         //This "for" shows the pattern to enter (its limit is the level reached)
         for(j =0; j<=i; j++){
             console.log(j);
