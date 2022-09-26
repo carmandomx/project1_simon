@@ -6,18 +6,18 @@ First project: The computer creates a pattern using 4 buttons which the user nee
 
 Team C:
 1.-
-Name: Axcel Espinal
-Path: Salesforce
+Name: Axcel Espinal, 
+Path: Salesforce, 
 Mail: axcel.espinal@itksquare.edu.mx
 
 2.-
-Name: Brandon Hernandez
-Path: Javascript
+Name: Brandon Hernandez, 
+Path: Javascript, 
 Mail:brandon.hernandez@itksquare.edu.mx
 
 3.-
-Name: Karla Chable
-Path: Flutter
+Name: Karla Chable, 
+Path: Flutter, 
 Mail: karla.chable@itksquare.edu.mx
 
 ## Assignation
@@ -38,7 +38,7 @@ Please use this format for your User Stories assignations
 
 # Live demo
 
-Please include here a link to your [live demo](url_here_please)
+You can find our finished project [here](https://axcelespinal-itk.github.io/project1_simon_groupC/index.html)
 
 # Requeriments
 
