@@ -18,6 +18,7 @@ const buttonSounds = [
 
 // We get the elements from the html file
 
+
 let title = document.getElementById('title');
 let subtitle = document.getElementById('subtitle');
 let red = document.getElementById('red');
@@ -29,8 +30,6 @@ let start = document.getElementById('startBtn');
 // Once we got the elements from the html file, then we storage the square buttons into an array
 
 let squares = [red, green, yellow, blue];
-
-// We create an event for the start button, so that we can push it and start the game
 
 start.addEventListener('click', function () {
     // We set the state
@@ -113,18 +112,39 @@ function squarePress(event) {
                 newLevel();
             }
         }
+        // Here if User inputs the wrong button, we show user that he failed and we call the repeat level function
+        else {
+            subtitle.innerText = 'You fail!'
+            start.disabled = false;
+            repeatLevel();
+        }
+        // Finally for this part we play the sound depending of the button we pressed
+        soundPlace2 = squares.indexOf(button);
+        buttonSounds[soundPlace2].play();
     }
-    // Finally for this part we play the sound depending of the button we pressed
-    soundPlace2 = squares.indexOf(button);
-    buttonSounds[soundPlace2].play();
 }
 
-
-
-
-
-
-
-
-
-
+// Here we create a function that repeats the level in case that user inputs the wrong button
+// Here is almost the exactly function of next level but we use the last secuence used, that's it.
+function repeatLevel() {
+    start.disabled = true;
+    setTimeout(() => {
+        subtitle.innerText = 'Round: ' + round;
+        playerPatron = 0;
+        let secuenceIndex = 0;
+        let timer = setInterval(() => {
+            const btn = stgSquares[secuenceIndex];
+            btn.classList.toggle('active');
+            setTimeout(() => {
+                btn.classList.toggle('active');
+                soundPlace3 = squares.indexOf(btn);
+                buttonSounds[soundPlace3].play();
+            }, 250);
+            secuenceIndex += 1;
+            if (secuenceIndex >= round) {
+                clearInterval(timer);
+            }
+        }, 500);
+        state = "waitingForPlayer"
+    }, 1000);
+}
