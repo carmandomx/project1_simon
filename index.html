@@ -5,9 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITK - Simon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/83bdeaebc9.js" crossorigin="anonymous"></script>
 </head>
-<body>
+<body id="wrapper">
+    
     <!-- Good luck! -->
+    <header>
+        <figure class="logoContainer">
+            <img src="img/SIMONSAYSLOGO.png" alt="simonLogo" class="simonLogo">
+        </figure>
+    </header>
+
+    <main class="main">
+
+        <!-- This section will display the round number -->
+        <div  class="circle">
+            <span class="circleCount">
+                <label id="round"></label> <!-- Here we call the variable from index.js -->
+                <p class="static">/20</p>
+            </span>
+        </div>
+        
+        <!-- this section will display the buttons for play the game -->
+        <div class="main_central">
+            <button id="buttonsqrgreen" disabled class="buttonA square a" onclick="simon.pressButton(this)"> GREEN</button>
+            <button id="buttonsqrred" disabled class="buttonB square b" onclick="simon.pressButton(this)">YELLLOW</button>
+            <button id="buttonsqryellow" disabled class="buttonC square c" onclick="simon.pressButton(this)">RED</button>
+            <button id="buttonsqrblue" disabled class="buttonD square d" onclick="simon.pressButton(this)">BLUE</button>
+        </div> 
+    
+
+    </main>
+
+    
+    <!--  Buttons container for start the game or end the current section -->
+
+    <section class="buttonsSE_Container">
+        <div class="buttonsSE">
+            <button id="startButton" class="SEbutton start" onclick="simon.startPlay()">Start </button>
+            <button id="startOverButton" class="SEbutton start" onclick="simon.startOver()" hidden>Start Over </button>
+            <button id="endButton" class="SEbutton end" onclick="simon.endGame()">End</button>
+        </div>
+    </section>
+    
+
+    <!-- This section display for the user information about his steps / round -->
+    <section>
+        <div class="userStep">
+            <label id="ContStep"></label> <label ></label>
+        </div>
+    </section>
+
+    <!------ M O D A L -- S E S S I O N-->
+    
+    <!--WINNER Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <figure><img  class="winnerLogo"src="img/youhaveWon.png" alt="You have Won!"></figure>
+        </div>
+        <div class="modal_button">
+            <button onclick="simon.startOver()" class="SEbutton modalA"><i class="fa-solid fa-rotate-right"></i> Play Again</button>
+            <button id="HardMode" class="SEbutton modalB"><i class="fa-solid fa-fire"></i>Hard Mode</button>
+        </div>
+    </div>
+
 
     <script src="./index.js"></script>
 </body>

@@ -1,0 +1,322 @@
+/* GENERALS STYLES */ 
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(224, 224, 224);
+    box-sizing: border-box;
+    overflow: hidden;
+    
+}
+
+#wrapper{
+    margin: 0 auto;
+}
+
+/* {
+    outline: 1px solid red !important;
+ } 
+ */
+
+ /* END GENERALS STYLES */
+
+
+/*  CSS STYLE FOR  MAIN section */
+
+.logoContainer{
+    width: 100%;
+    height: 100%;
+    margin: 0   auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.simonLogo{
+    width: 850px;
+}
+
+
+.main{
+    width: 100%;
+    height: 100%;
+    margin: 0   auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_central {
+    border-radius: 10px;
+    background-color: rgb(45, 45, 45);
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 650px;
+    box-shadow: 10px 5px 25px rgba(0, 0, 0, 0.263);
+}
+
+
+.square{
+    width: 48.8%;
+    height: 48%;
+    text-align:center;
+    
+}
+
+
+
+.buttonA{
+    margin-bottom: 10px;
+    border-top-left-radius: 10px; 
+    background-color: #0d731c;
+    color: #05430e;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 45PX;
+    font-weight: bold;
+    border-style: none;
+    cursor: pointer;
+}
+
+
+.buttonB{
+    border-bottom-left-radius: 10px;
+    background-color:#f89a1e ;
+    color:#cd7400 ;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 45PX;
+    font-weight: bold;
+    border-style: none;
+    cursor: pointer;
+}
+
+
+
+.buttonC{
+    margin-bottom: 10px;
+    border-top-right-radius: 10px;
+    background-color: #d90416;;
+    color: #78040d;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 45PX;
+    font-weight: bold;
+    border-style: none;
+    cursor: pointer;
+    transition: color  1.2s;
+}
+
+
+
+.buttonD{
+    border-bottom-right-radius: 10px;
+    background-color: #035aa6;
+    color: #002f57;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 45PX;
+    font-weight: bold;
+    border-style: none;
+    cursor: pointer;
+    transition: color  1.2s;
+}
+
+.square:active,
+.active
+{
+    filter: brightness(150%);
+}
+.square:disabled,
+.disabled
+{
+    background-color: rgb(195, 195, 195);
+ }
+
+/* END CSS STYLE FOR MAIN SECTION */
+
+/* STARD AND END BUTTONS SECTION STYLE */
+
+.buttonsSE_Container{
+    width: 100%;
+    height: 120px;
+    padding-top: 30px;
+    margin: 0   auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+
+.SEbutton{
+    border-radius: 10px;
+    width: 250px;
+    height: 100px;
+    margin: 40px;
+    font-size: 45PX;
+    font-weight: bold;
+    border-style: none;
+    cursor: pointer;
+    color: white;
+}
+
+.start{
+    background-color: rgb(45, 45, 45);
+}
+
+.start:disabled {
+    background-color: #eee;
+}
+
+.start:active{
+    filter: brightness(150%);
+}
+
+.end{
+    background-color: rgb(45, 45, 45);
+}
+
+.end:disabled{
+    background-color: #eee;
+}
+
+/* END STARD AND END BUTTONS SECTION STYLE */
+
+
+/* CIRCLE AND ROUND INFORMATION SECTION */
+.circle{
+    position: absolute;
+    background:  rgb(45, 45, 45);
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    box-shadow: 10px 5px 25px rgba(0, 0, 0, 0.263);
+    z-index: 1;
+}
+
+.circleCount{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 250px;
+    height: 250px;
+    font-size: 70px;
+    font-weight: 800;
+    color: rgb(195, 195, 195);
+}
+
+.static{
+    color: rgb(23, 23, 23);
+}
+
+.userStep{
+    padding-top: 20px;
+    width: 100%;
+    font-size: 25pt;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    color: rgb(47, 47, 47);
+}
+
+/* END CIRCLE AND ROUND INFORMATION SECTION */
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.3); 
+    -webkit-animation-name: fadeIn; 
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+}
+
+  
+  /* Modal Content/Box */
+.modal-content {
+    position: fixed;
+    background-color: #fefefe;
+    left: 575px;
+    top: 65px;
+    margin: 5% auto; 
+    padding: 10px;
+    border: 1px solid #888;
+    width: 1105px; 
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s;
+}
+
+.modal-content:first-child{
+    text-align: center;
+}
+
+.modal_button{
+    position: fixed;
+    left: 806px;
+    padding: 0;
+    bottom: 2px;
+}
+
+.winnerLogo{
+    width: 1000px;
+}
+
+.playAgainImg{
+    width: 1000px;
+}
+
+.playAgainText{
+    font-size: 35pt;
+    font-weight: 800;
+    color:  rgb(45, 45, 45);;
+}
+.modalA{
+    color: whitesmoke;
+    background-color: #0d731c;
+    font-size: 25px;
+}
+.modalB{
+    color: whitesmoke;
+    background-color: #d90416;
+    font-size: 25px;
+}   
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0} 
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} 
+    to {opacity: 1}
+}
