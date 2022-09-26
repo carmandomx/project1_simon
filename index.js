@@ -61,7 +61,8 @@ const playGame = () => {
   levels = 0;
   sublevels = 0;
   startBtn.classList.add("hideIt");
-  lightUpPattern();d
+  document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
+  lightUpPattern();
 };
 
 //End
@@ -125,15 +126,12 @@ const userColorClick =    (onClick) => {
   if (caseColor === sequence[sublevels]) {
     //continue the event.
     sublevels++;
-    console.log("this is sublevel " + sublevels);
  
     //next stage.
     if (sublevels > levels) {
       //next step.
       levels++;
-      //console.log("this is level " + levels);
-      score = levels;
-      document.querySelector("#js-score").textContent = 'Level: ' + score;
+      document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
       
       //If we win.
       if (levels === stages) {
@@ -146,6 +144,7 @@ const userColorClick =    (onClick) => {
         sublevels = 0;
         //next pattern in screen.
         setTimeout(lightUpPattern, mediumWait);
+        
       }
     }
   } else {
@@ -153,6 +152,9 @@ const userColorClick =    (onClick) => {
       document.querySelector('#tittle').textContent = 'Error! Try again.';
       //timeout
       setTimeout(function(){
+        levels = 0;
+        sublevels = 0;
+        document.querySelector("#js-score").textContent = `Level ${levels + 1} of 20`;
         lightUpPattern();
       },1000);
 
