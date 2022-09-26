@@ -27,14 +27,6 @@ const soundPurple = uploadSound("./media/simonSound1.mp3"),
   soundPalevioletred = uploadSound("./media/simonSound3.mp3"),
   soundYellow = uploadSound("./media/simonSound4.mp3");
 
-//button start - optional. Sound for start bouton.
-/*let soundStart = document.querySelector(".startBtn");
-soundStart.addEventListener("click", function () {
-  let tagAudio = document.createElement("audio");
-  tagAudio.setAttribute("src", "./media/simonClick.mp3");
-  //tagAudio.play();
-});*/
-
 //Later, we create a condition for the index value in our collection. Then we discover the color that was chosen.
 const numberToColor = (index) => {
   if (index === 0) return "purple";
@@ -57,7 +49,9 @@ const playGame = () => {
   /* We create a new array with stages lenght. */
   sequence = new Array(stages);
   /* reassign sequence value for a array with random numbers for a new sequence pattern. */
-  sequence = sequence.fill(0).map(() => Math.floor(Math.random() * numberPGPY));
+  sequence = sequence
+    .fill(0)
+    .map((pattern) => Math.floor(Math.random() * numberPGPY));
   levels = 0;
   sublevels = 0;
   //Hide the start bouton (btnStart)
