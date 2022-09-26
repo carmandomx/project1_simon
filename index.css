@@ -45,7 +45,10 @@ body {
 }
 
 
+
 /* COLORED BUTTONS */
+
+=======
 
 #green {
     background-color: #90be6d;
@@ -62,6 +65,7 @@ body {
 
 #blue {
     background-color: #00a8e8;
+
 }
 
 .buttons {
@@ -85,4 +89,5 @@ body {
 .buttons button:hover {
     transform: translateY(-0.25em);
     cursor: pointer;
+
 }
