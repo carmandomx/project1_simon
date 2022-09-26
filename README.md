@@ -1,8 +1,6 @@
-# Project I
+# Project I - SIMON SAYS
 
-Welcome! This repo contains helpful information and starter files for your project, just fork this repo and go to town!
-
-Name proyect: "Simon Says"
+First project: The computer creates a pattern using 4 buttons which the user needs to replicate. There are 20 stages and the user wins when completing all 20.
 
 ## Team members
 
