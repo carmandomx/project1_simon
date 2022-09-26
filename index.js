@@ -6,6 +6,12 @@ simonAudio.setAttribute("src", "https://s3.amazonaws.com/freecodecamp/simonSound
 let simonAudio2 = document.createElement("audio")
 simonAudio2.setAttribute("src", "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3")
 
+// Audio to play when committing an error in the played pattern
+let wrong = new Audio("sounds/wrong.mp3");
+wrong.volume = 0.3;
+
+let started = false; // boolean variable to know the game status
+
 //sleep function
 function sleep(ms){
     return new Promise(resolve =>setTimeout(resolve, ms));
@@ -74,30 +80,32 @@ function userAnswer(){
             return  promise;          
 }
 
+
 //The game starts when you click "start"
 start.addEventListener('click',async function () {
-
     
+    started = true; // to know when we started a game, allows to enter the while loop
+    document.querySelector(".tittle").innerHTML = "Simon's Game";
 
     //This array will save the answers of the 20 levels
-    const answers = [];
-
+    const gamePattern = [];
+    
     //we create the answers for the 20 levels
-    for(i=0; i < 20; i++) answers[i]= getRandomInt(1, 5)
-
+    for(i=0; i < 20; i++) gamePattern[i]= getRandomInt(1, 5)
+    
     await sleep(300);
-   
-    //The game starts here
-    //"i" is the level
+    
+    //The game starts here, "i" is the level
     i =0;
+    
     //This "while" prevents us from going over 20 levels
-    while( i < 20 ){
+    while( i < 20 && started === true){
     
         //This "for" shows the pattern to enter (its limit is the level reached)
         for(j =0; j<=i; j++){
             console.log(j);
 
-            switch (answers[j]){
+            switch (gamePattern[j]){
                 case 1:
                 red_1.setAttribute('class','pattern_select_red');
                 simonAudio.play()
@@ -134,26 +142,44 @@ start.addEventListener('click',async function () {
             await sleep(500);
         }
 
-        
+    
         //This "for" evaluates the user's response
         for(j =0; j<=i; j++){
 
             //We wait for the user's response
-             await userAnswer();
-             
-             //If the user makes a mistake in any step, the "for" is broken without having leveled up
-             if(userAnswerClick != answers[j])break;
+            await userAnswer();
             
-             //If the user reaches the last step, he levels up!
-             if(j==i){
+            //If the user makes a mistake in any step, the "for" is broken without having leveled up
+            if(userAnswerClick != gamePattern[j]){
+                wrong.play(); // plays sound of error
+                document.querySelector(".tittle").innerHTML = "Game Over, Press Start To Replay";
+                // changing the page style to inform of the error
+                document.body.style.backgroundColor = "red";
+                await sleep(500)
+                document.body.style.backgroundColor = "white";
+                // reseting conditions of intial game
+                startOver();
+
+                break;
+            }
+            
+            //If the user reaches the last step, he levels up!
+            if(j==i){
                 i++; //level up
                 break;
 
-             }  
+            }  
 
         }
         await sleep(1000);
 
+        }
     }
- 
- });
+);
+
+
+// reseting initial conditions
+function startOver() {
+     // so the game doesn't enter the while loop 
+    started = false;
+  }
