@@ -149,9 +149,9 @@ const userColorClick = (onClick) => {
       //If we win.
       if (levels === stages) {
         console.log("Ganaste!");
-        document.querySelector("#tittle").textContent = "You win!";
-        document.querySelector("#startBtn").textContent = "Play again";
-        endGame();
+        document.querySelector("#tittle").textContent = "You win!"; //update the title to show the user they've won
+        document.querySelector("#startBtn").textContent = "Play again"; //update the button label to play again with a new pattern
+        endGame(); //calls the endGame function
       } else {
         //reset it.
         sublevels = 0;
@@ -161,15 +161,15 @@ const userColorClick = (onClick) => {
     }
   } else {
     //if user fails
-    document.querySelector("#tittle").textContent = "Error! Try again.";
-    //timeout
+    document.querySelector("#tittle").textContent = "Error! Try again."; //update title to show an error
+    //timeout so a second passes before updating anything
     setTimeout(function () {
-      levels = 0;
+      levels = 0; //restart levels so the user starts the pattern from the start
       sublevels = 0;
       document.querySelector("#js-score").textContent = `Level ${
         levels + 1
-      } of 20`;
-      lightUpPattern();
+      } of 20`; //restart the levels label
+      lightUpPattern(); //call the function to repeat the pattern
     }, 1000);
   }
 };
