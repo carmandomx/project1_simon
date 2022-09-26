@@ -45,11 +45,6 @@ body {
 }
 
 
-
-/* COLORED BUTTONS */
-
-=======
-
 #green {
     background-color: #90be6d;
 
@@ -65,7 +60,20 @@ body {
 
 #blue {
     background-color: #00a8e8;
+}
 
+
+/* START AND RESET BUTTONS */
+
+.active {
+    filter: brightness(125%);
+    transform: scale(105%);
+}
+
+#startBtn:disabled {
+    background-color: #eee;
+    transform: none;
+    box-shadow: none;
 }
 
 .buttons {
@@ -89,5 +97,4 @@ body {
 .buttons button:hover {
     transform: translateY(-0.25em);
     cursor: pointer;
-
 }
