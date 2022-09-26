@@ -76,6 +76,7 @@ const startOver = () => {
 //End
 const endGame = () => {
   startBtn.classList.remove("hideIt");
+  startOverBtn.classList.add("hideIt");
   //falsy value
   levels = -1;
 };
