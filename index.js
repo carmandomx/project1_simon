@@ -50,6 +50,7 @@ function newLevel() {
     setTimeout(() => {
         // We refresh the round variable whenever a level changes, and then show it in the page
         round += 1;
+        // For testing porpuses we added the rounds text since the user story 3, we forgot to remove when we pushed that user story
         subtitle.innerText = 'Round: ' + round;
         // Get a random number from 0 to 3 and storage in a variable
         let nextColor = Math.floor(Math.random() * 4);
