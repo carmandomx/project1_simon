@@ -58,6 +58,7 @@ const playGame = () => {
     .map((pattern) => Math.floor(Math.random() * numberPGPY));
   levels = 0;
   sublevels = 0;
+  // the button is created and hidden once the game starts
   startBtn.classList.add("hideIt");
   const startOverBtn = document.querySelector("#startOverBtn");
   startOverBtn.classList.remove("hideIt");
@@ -67,7 +68,7 @@ const playGame = () => {
   lightUpPattern();
 };
 
-//start over
+//start over, created a new function that will add a button to restart the game, from the current pattern, if the page is refreshed it will create a complete new game
 const startOver = () => {
   levels = 0;
   sublevels = 0;
@@ -142,6 +143,7 @@ const userColorClick = (onClick) => {
     if (sublevels > levels) {
       //next step.
       levels++;
+      //added a counter to show the current level that you're on, this was added to the other conditional and to the start over to restart the level count
       document.querySelector("#js-score").textContent = `Level ${
         levels + 1
       } of 20`;
