@@ -108,7 +108,7 @@ const turnOffPattern = (color) => {
 };
 
 //to choose the color according to the user
-const userColorClick = (onClick) => {
+const userColorClick =    (onClick) => {
   //static game.
   if (levels === -1) return;
   // retrieve active color name based on color-data (html)
@@ -119,6 +119,7 @@ const userColorClick = (onClick) => {
   glowUpPattern(chosenColor);
 
   //If the pressed button corresponds to the pattern.
+  document.querySelector('#tittle').textContent = 'Simon says...';
   if (caseColor === sequence[sublevels]) {
     //continue the event.
     sublevels++;
@@ -142,9 +143,17 @@ const userColorClick = (onClick) => {
     }
   } else {
       //if user fails
-      console.log("perdiste");
-      document.querySelector('#tittle').textContent = 'You lost!'; //Display the YOU LOST message
-      endGame();
+      document.querySelector('#tittle').textContent = 'Error! Try again.';
+      //timeout
+      setTimeout(function(){
+        lightUpPattern();
+      },2000);
+
+
+
+      // console.log("perdiste");
+      // document.querySelector('#tittle').textContent = 'You lost!'; //Display the YOU LOST message
+      // endGame();
   }
 };
 
