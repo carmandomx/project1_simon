@@ -19,6 +19,7 @@ class  SimonSays{
     round = 0;
     totalRounds = 20;
     contStep = 0;
+    mode = 'easy'; //Easy as default
     
     
     pressButton(elem){
@@ -84,7 +85,7 @@ class  SimonSays{
             this.contStep +=1;
             let currentRound = this.step + 1; 
             document.querySelector('#ContStep').innerHTML = "Your Turn: " + this.contStep + " / " + currentRound;
-            if(this.step===this.pattern && currentRound===20){
+            if(this.step===this.pattern && currentRound===2){
                 this.finished();
             }
             else if(this.step===this.pattern){
@@ -98,6 +99,9 @@ class  SimonSays{
             document.querySelector('#ContStep').innerHTML = "Try again";
             this.playWrongButton();
             this.resetPattern();
+            if(this.mode == 'hard'){ //If the player is on hardmode then start Over with a new pattern 
+                this.startOver();
+            }
         }
 
     }
@@ -184,6 +188,11 @@ class  SimonSays{
         this.pattern=0;
         this.step=1;
         this.patternArray=[];
+
+        document.getElementById('HardMode').onclick = () =>{ //If the user click on hardmode
+            this.mode = 'hard'; //Mode = 'Hard'
+            this.startOver()
+        }
     }
 
     playAgain(){
