@@ -1,0 +1,144 @@
+body {
+  align-items: center;
+  background-color: #343644;
+  display: flex;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 100vh;
+  justify-content: center;
+}
+
+.main {
+  background-color: #e5e5e5;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  height: 85%;
+  width: 70%;
+}
+
+.menuSection {
+  align-items: center;
+  color: #9a9a9a;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 30%;
+}
+.title {
+  font-family: Fredoka One;
+  font-size: 34px;
+}
+.startButton {
+  background-color: #6a6f99;
+  color: #e5e5e5;
+  border-radius: 12px;
+  height: 6vh;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+  width: 8vw;
+  cursor: pointer;
+  border: 1px solid #343644;
+  box-shadow: 1px 1px #343644;
+  position: relative;
+  touch-action: manipulation;
+}
+.startButton:active {
+  box-shadow: 0px 0px #343644;
+  top: 1px;
+  left: 1px;
+}
+
+.gameSection {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 100%;
+  justify-content: center;
+  width: 70%;
+}
+.levelLabel {
+  color: #9a9a9a;
+  font-size: 26px;
+  margin-bottom: 1vh;
+  margin-top: 0;
+}
+.gameBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19vw, max-content));
+  grid-gap: 16px;
+  justify-content: space-evenly;
+  align-content: center;
+  padding: initial;
+  background-color: #e5e5e5;
+  border-radius: 16px;
+  height: 80%;
+  width: 90%;
+}
+.gameButton {
+  border-radius: 16px;
+  height: 28vh;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  width: 19vw;
+  cursor: pointer;
+  border: 0px solid;
+  position: relative;
+  touch-action: manipulation;
+}
+.redB {
+  background-color: #e1574b;
+  border: 2px solid #ba0000;
+  box-shadow: 1px 1px #ba0000, 2px 2px #ba0000, 3px 3px #ba0000;
+}
+.greenB {
+  background-color: #72cf8d;
+  border: 2px solid #49965d;
+  box-shadow: 1px 1px #49965d, 2px 2px #49965d, 3px 3px #49965d;
+}
+.blueB {
+  background-color: #58a8d8;
+  border: 2px solid #316383;
+  box-shadow: 1px 1px #316383, 2px 2px #316383, 3px 3px #316383;
+}
+.yellowB {
+  background-color: #f2bb51;
+  border: 2px solid #e39100;
+  box-shadow: 1px 1px #e39100, 2px 2px #e39100, 3px 3px #e39100;
+}
+.gameButton:active {
+  box-shadow: 0px 0px;
+  top: 3px;
+  left: 3px;
+}
+.pressedButton {
+  border-radius: 16px;
+  height: 28vh;
+  margin-bottom: 2vh;
+  margin-top: 2vh;
+  width: 19vw;
+  cursor: pointer;
+  border: 0px solid;
+  position: relative;
+  touch-action: manipulation;
+  box-shadow: 0px 0px;
+  top: 3px;
+  left: 3px;
+}
+.pressedRB {
+  background-color: #ba0000;
+  border: 2px solid #ba0000;
+}
+.pressedGB {
+  background-color: #49965d;
+  border: 2px solid #49965d;
+}
+.pressedBB {
+  background-color: #316383;
+  border: 2px solid #316383;
+}
+.pressedYB {
+  background-color: #e39100;
+  border: 2px solid #e39100;
+}
