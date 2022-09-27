@@ -81,6 +81,7 @@ const showCurrentGameSeqnc = async () => {
         switch (gameSeqnc[i]) {
           case 'r':
             redButton.setAttribute('class', 'pressedButton pressedRB');
+            playAudio('r');
             setTimeout(() => {
               redButton.setAttribute('class', 'gameButton redB');
               resolve();
@@ -88,6 +89,7 @@ const showCurrentGameSeqnc = async () => {
             break;
           case 'g':
             greenButton.setAttribute('class', 'pressedButton pressedGB');
+            playAudio('g');
             setTimeout(() => {
               greenButton.setAttribute('class', 'gameButton greenB');
               resolve();
@@ -95,6 +97,7 @@ const showCurrentGameSeqnc = async () => {
             break;
           case 'b':
             blueButton.setAttribute('class', 'pressedButton pressedBB');
+            playAudio('b');
             setTimeout(() => {
               blueButton.setAttribute('class', 'gameButton blueB');
               resolve();
@@ -102,6 +105,7 @@ const showCurrentGameSeqnc = async () => {
             break;
           case 'y':
             yellowButton.setAttribute('class', 'pressedButton pressedYB');
+            playAudio('y');
             setTimeout(() => {
               yellowButton.setAttribute('class', 'gameButton yellowB');
               resolve();
@@ -132,19 +136,23 @@ const verifySeqnc = () => {
 /* Event listeners waiting for User to click any of the four buttons. */
 const handleRedButton = () => {
   playerSeqnc.push('r');
+  playAudio('r');
   /* Function that verifies if User inputs are equal to the current round game-sequence. */
   verifySeqnc();
 };
 const handleGreenButton = () => {
   playerSeqnc.push('g');
+  playAudio('g');
   verifySeqnc();
 };
 const handleBlueButton = () => {
   playerSeqnc.push('b');
+  playAudio('b');
   verifySeqnc();
 };
 const handleYellowButton = () => {
   playerSeqnc.push('y');
+  playAudio('y');
   verifySeqnc();
 };
 
@@ -155,3 +163,11 @@ const removeAllActiveListeners = () => {
   blueButton.removeEventListener('click', handleBlueButton);
   yellowButton.removeEventListener('click', handleYellowButton);
 };
+
+/* Function that plays a sound when a button is pressed */
+const playAudio = (color) => {
+  
+    let filePath = `sounds/${color}.mp3`;
+    let audio = new Audio(filePath);
+    audio.play();
+  };
