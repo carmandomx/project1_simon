@@ -36,20 +36,16 @@ let squares = [red, green, yellow, blue];
 reset.disabled = true;
 
 start.addEventListener('click', function () {
-    
-    if (state === "nextLevel" || state === "reset") {
-        // We set the state
+    if (state === "nextLevel" || state === "reset" || state === "win") {
         state = "waitingForPatron"
-        // Then we call a function to start a new level
         newLevel();
         stgSquares = [];
         round = 0;
         playerPatron = 0;
         reset.disabled = false;
-
+        title.innerText = "Simon Says!";
     }
 });
-
 
 //We create an event listener for the reset bttn and set variables to 0
 reset.addEventListener('click', function () {
@@ -64,47 +60,56 @@ reset.addEventListener('click', function () {
 // Then we create the ne level function 
 
 function newLevel() {
-    // We need to disable the start button so we can´t press it when the game starts
-    start.disabled = true;
-    // We required a set time function so that theres is a little delay everytime we change a level
-    setTimeout(() => {
-        // We refresh the round variable whenever a level changes, and then show it in the page
-        round += 1;
-        // For testing porpuses we added the rounds text since the user story 3, we forgot to remove when we pushed that user story
-        subtitle.innerText = 'Round: ' + round;
-        // Get a random number from 0 to 3 and storage in a variable
-        let nextColor = Math.floor(Math.random() * 4);
-        // Get a square button depending on the index of the last random number
-        let nextSquare = squares[nextColor];
-        // Then storage that button place into the secuence array
-        stgSquares.push(nextSquare);
-        playerPatron = 0;
-        // We need a variable to look into the already stored buttons array
-        let secuenceIndex = 0;
-        // Then we storage in a variable a function that will make the secuence to be animated
-        let timer = setInterval(() => {
-            // A variable to select each button that is in the secuence array that has already been stored
-            const btn = stgSquares[secuenceIndex];
-            // Here is kind of assignation of a class for the selected button so that css can read that, and then apply the stuff in there.
-            btn.classList.toggle('active');
-            // Here's kind of the same bbut the difference is that with this one we can already animate the last buttons and so. 
-            setTimeout(() => {
-                btn.classList.toggle('active')
-                // We get the sound from the sounds array depending of the index of the button already in the secuence
-                soundPlace = squares.indexOf(btn);
-                // then we play it
-                buttonSounds[soundPlace].play();
-            }, 250);
-            // Secuence increments so that we can do the same for the new button in the secuence
-            secuenceIndex += 1;
-            // when the variale we used to check the secuence stored array is equal to the round, that means the array already finishes, so we close the timer we created before
-            if (secuenceIndex >= round) {
-                clearInterval(timer);
-            }
-        }, 500);
-        state = "waitingForPlayer"
-    }, 1000);
+    if (round < 20) {
+        // We need to disable the start button so we can´t press it when the game starts
+        start.disabled = true;
+        // We required a set time function so that theres is a little delay everytime we change a level
+        setTimeout(() => {
+            // We refresh the round variable whenever a level changes, and then show it in the page
+            round += 1;
+            // For testing porpuses we added the rounds text since the user story 3, we forgot to remove when we pushed that user story
+            subtitle.innerText = 'Round: ' + round;
+            // Get a random number from 0 to 3 and storage in a variable
+            let nextColor = Math.floor(Math.random() * 4);
+            // Get a square button depending on the index of the last random number
+            let nextSquare = squares[nextColor];
+            // Then storage that button place into the secuence array
+            stgSquares.push(nextSquare);
+            playerPatron = 0;
+            // We need a variable to look into the already stored buttons array
+            let secuenceIndex = 0;
+            // Then we storage in a variable a function that will make the secuence to be animated
+            let timer = setInterval(() => {
+                 // A variable to select each button that is in the secuence array that has already been stored
+                const btn = stgSquares[secuenceIndex];
+                btn.classList.toggle('active');
+                 // Here is kind of assignation of a class for the selected button so that css can read that, and then apply the stuff in there.
+                setTimeout(() => {
+                    btn.classList.toggle('active')
+                    // We get the sound from the sounds array depending of the index of the button already in the secuence
+                    soundPlace = squares.indexOf(btn);
+                    // then we play it
+                    buttonSounds[soundPlace].play();
+                }, 250);
+                // Secuence increments so that we can do the same for the new button in the secuence
+                secuenceIndex += 1;
+                // when the variale we used to check the secuence stored array is equal to the round, that means the array already finishes, so we close the timer we created before
+                if (secuenceIndex >= round) {
+                    clearInterval(timer);
+                }
+            }, 500);
+            state = "waitingForPlayer";
+        }, 1000);
+    }
+    else {
+        state = "win";
+        title.innerText = "Press start for a new attempt"
+        subtitle.innerText = "You win";
+        start.disabled = false;
+        reset.disabled = true;
+    }
 }
+
 
 // Here we create the events for pressing each square button, so that we can use them by pushing them
 red.addEventListener('click', squarePress);
