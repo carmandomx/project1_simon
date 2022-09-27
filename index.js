@@ -15,6 +15,8 @@ let round = 1;
 const MAX_ROUNDS = 20;
 let hardmode = false;
 
+let text = '';                                                  // US8 text.
+
 /* Event listener waiting for User to click START button. */
 startButton.addEventListener('click', () => {
   removeAllActiveListeners();
@@ -142,7 +144,8 @@ const verifySeqnc = () => {
     showCurrentGameSeqnc(gameSeqnc);
     return;
   }
-  removeAllActiveListeners(); /* Here will be managed when User wins the game. */
+   // User story 8;
+   newGame();
 };
 
 /* Event listeners waiting for User to click any of the four buttons. */
@@ -205,3 +208,17 @@ const updateLevel = (level) => {
     textLevel.innerText = `Level ${level} of 20`;
    
   };
+
+  // User story 8 Function. When the game is completed pop up a winner message and an option to start a new game.
+const newGame = () => {
+  if (confirm("Congratulations!! You are the winner! \n Do you want to start a new game? ") === true) {
+    text = "You're going to play another game."
+    if (hardmode) {
+      hardRun();
+    } else {
+      normalRun();
+    } 
+  }else {
+    alert("You're still the winner!!");
+  };
+}
