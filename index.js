@@ -121,8 +121,13 @@ const showCurrentGameSeqnc = async () => {
 /* Function that verifies if User inputs are equal to the current round game-sequence. */
 const verifySeqnc = () => {
   const seqncIsCorrect = playerSeqnc.every((el, i) => el === gameSeqnc[i]);
-  if (!seqncIsCorrect)
-    return false; /* Here will be managed when User clicks the wrong button. */
+  if (!seqncIsCorrect) {
+    round = 1;    
+    playerSeqnc = [];    
+    playAudio('wrong');
+    showCurrentGameSeqnc();    
+    alert("You have entered an incorrect pattern!");    
+  }
   if (playerSeqnc.length !== round) return;
   if (playerSeqnc.length !== MAX_ROUNDS) {
     round++;
