@@ -1,5 +1,7 @@
 const startButton = document.querySelector('.startButton');
 
+const restart = document.querySelector(".restartButton");    // US7 Button.
+
 const redButton = document.querySelector('.redB');
 const greenButton = document.querySelector('.greenB');
 const blueButton = document.querySelector('.blueB');
@@ -41,6 +43,7 @@ const normalRun = () => {
   greenButton.addEventListener('click', handleGreenButton);
   blueButton.addEventListener('click', handleBlueButton);
   yellowButton.addEventListener('click', handleYellowButton);
+  restart.addEventListener('click', restarting);            // US7 restart event listener.
 };
 
 const hardRun = () => {};
@@ -165,12 +168,27 @@ const handleYellowButton = () => {
   verifySeqnc();
 };
 
+// US 7 Function. Restart the game at the dificulty level that was being played. 
+const restarting = () => {
+  playerSeqnc = [];
+  round = 1;  
+  updateLevel(round);
+  verifySeqnc();
+
+  if (hardmode) {
+    hardRun();
+  } else {
+    normalRun();
+  };
+};
+
 /* Function that removes all active listeners */
 const removeAllActiveListeners = () => {
   redButton.removeEventListener('click', handleRedButton);
   greenButton.removeEventListener('click', handleGreenButton);
   blueButton.removeEventListener('click', handleBlueButton);
   yellowButton.removeEventListener('click', handleYellowButton);
+  restart.removeEventListener('click', restarting);             // US 7 Remove listener.
 };
 
 /* Function that plays a sound when a button is pressed */
