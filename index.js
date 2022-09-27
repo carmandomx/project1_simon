@@ -26,19 +26,39 @@ let green = document.getElementById('green');
 let yellow = document.getElementById('yellow');
 let blue = document.getElementById('blue');
 let start = document.getElementById('startBtn');
+let reset = document.getElementById('resetBtn');
+
 
 // Once we got the elements from the html file, then we storage the square buttons into an array
 
 let squares = [red, green, yellow, blue];
 
+reset.disabled = true;
+
 start.addEventListener('click', function () {
-    // We set the state
-    state = "waitingForPatron"
-    // Then we call a function to start a new level 
+    
+    if (state === "nextLevel" || state === "reset") {
+        // We set the state
+        state = "waitingForPatron"
+        // Then we call a function to start a new level
+        newLevel();
+        stgSquares = [];
+        round = 0;
+        playerPatron = 0;
+        reset.disabled = false;
+
+    }
+});
+
+
+//We create an event listener for the reset bttn and set variables to 0
+reset.addEventListener('click', function () {
+    state = "reset"
     newLevel();
     stgSquares = [];
     round = 0;
     playerPatron = 0;
+
 });
 
 // Then we create the ne level function 

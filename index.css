@@ -69,7 +69,8 @@ body {
     transform: scale(105%);
 }
 
-#startBtn:disabled {
+#startBtn:disabled,
+#resetBtn:disabled {
     background-color: #eee;
     transform: none;
     box-shadow: none;
