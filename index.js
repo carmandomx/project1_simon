@@ -5,6 +5,8 @@ const greenButton = document.querySelector('.greenB');
 const blueButton = document.querySelector('.blueB');
 const yellowButton = document.querySelector('.yellowB');
 
+const textLevel = document.querySelector('.levelLabel');
+
 let gameSeqnc = [];
 let playerSeqnc = [];
 let round = 1;
@@ -29,6 +31,7 @@ const normalRun = () => {
 
   playerSeqnc = [];
   round = 1;
+  updateLevel(round);
 
   /* Function that shows the current round game-sequence. */
   showCurrentGameSeqnc();
@@ -121,16 +124,17 @@ const showCurrentGameSeqnc = async () => {
 /* Function that verifies if User inputs are equal to the current round game-sequence. */
 const verifySeqnc = () => {
   const seqncIsCorrect = playerSeqnc.every((el, i) => el === gameSeqnc[i]);
-  if (!seqncIsCorrect) {
-    round = 1;    
-    playerSeqnc = [];    
-    playAudio('wrong');
-    showCurrentGameSeqnc();    
+  if (!seqncIsCorrect) {    
+    round = 1;
+    updateLevel(round);       
+    playerSeqnc = [];        
+    showCurrentGameSeqnc();             
     alert("You have entered an incorrect pattern!");    
   }
   if (playerSeqnc.length !== round) return;
   if (playerSeqnc.length !== MAX_ROUNDS) {
     round++;
+    updateLevel(round);
     playerSeqnc = [];
     showCurrentGameSeqnc(gameSeqnc);
     return;
@@ -175,4 +179,11 @@ const playAudio = (color) => {
     let filePath = `sounds/${color}.mp3`;
     let audio = new Audio(filePath);
     audio.play();
+  };
+
+/* Function that updates the message of what level the user is at */
+const updateLevel = (level) => {
+
+    textLevel.innerText = `Level ${level} of 20`;
+   
   };
