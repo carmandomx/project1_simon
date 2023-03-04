@@ -1,1 +1,1 @@
-console.log('Live reloading')
+console.log('Live reloading');
