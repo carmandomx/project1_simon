@@ -4,17 +4,17 @@ Welcome! This repo contains helpful information and starter files for your proje
 
 ## Team members
 
-Write here the names, career path and email of the members of the team
+Alexis Guevara Aramburo - alexis.guevara@itksquare.edu.mx
 
 ## Assignation 
 
 Please use this format for your User Stories assignations
 
-| User Stories     | John Doe | Jane Doe |
-| ---------------- | :--: | ---: |
-| Add US text here |  X   |      |
-| Add US text here |      |    X |
-| Add US text here |  X   |      |
+| User Stories     | Alexis | 
+| ---------------- | :--: |
+| Add US text here |  X   |
+| Add US text here |      |
+| Add US text here |  X   |
 
 # Live demo
 
