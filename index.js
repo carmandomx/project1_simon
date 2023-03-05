@@ -43,8 +43,9 @@ function playNext(idx) {
     currentColor = correctPattern[idx];
     if(!currentColor) {
         gameStarted = true;
-        message.innerText = 'Your turn';
-        console.log('Fin');
+        const CP = correctPattern.length;
+        const UP = userPattern.length;
+        message.innerText = `Your turn: ${CP - UP} taps`;
         return;
     }
 
@@ -88,13 +89,18 @@ function handleButtonClick(e) {
             break;
         }
     }
+
+    const CP = correctPattern.length;
+    const UP = userPattern.length;
+    message.innerText = `Your turn: ${CP - UP} taps`;
+    
+
     if(userPattern.length === correctPattern.length && !fail) {
-        // alert('success');
+        message.innerText = 'Success! Keep going!';
         setTimeout(() => {
             nextLevel();
         }, 1000);
     }
-    console.log('clicker', colorNumber);
 }
 
 function nextLevel() {
