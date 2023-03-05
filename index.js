@@ -8,6 +8,7 @@ const blue = document.getElementById('color-3');
 const yellow = document.getElementById('color-4');
 
 const message = document.getElementById('message');
+const reset = document.getElementById('resetButton');
 
 const startButton = document.getElementById('startButton');
 
@@ -24,6 +25,8 @@ red.addEventListener('click', (event) => handleButtonClick(event));
 green.addEventListener('click', handleButtonClick);
 blue.addEventListener('click', handleButtonClick);
 yellow.addEventListener('click', handleButtonClick);
+
+reset.addEventListener('click', () => resetGame(true));
 
 // click on start button
 startButton.addEventListener('click', (event) => {
@@ -105,15 +108,22 @@ function handleButtonClick(e) {
 
 function nextLevel() {
     // Create a random num for the color pattern
-    let randomNum = Math.floor(Math.random() * 4);
+    let randomNum = Math.floor(Math.random() * (4 - 1)) + 1;
+   
     correctPattern.push(randomNum);
+    console.log(correctPattern)
     resetGame();
     playNext(0);
 }
 
-function resetGame() {
-    message.innerText = 'Wait for the computer to finish';
+function resetGame(newGame = false) {
+    if(newGame) {
+        startButton.style.display = 'initial';
+        message.style.display = 'none';
+        correctPattern = [];
+    } else {
+        message.innerText = 'Wait for the computer to finish';
+    }
     userPattern = [];
     gameStarted = false;
-    startButton.innerText = 'Start';
 }
