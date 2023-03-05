@@ -7,7 +7,7 @@ const green = document.getElementById('color-2');
 const blue = document.getElementById('color-3');
 const yellow = document.getElementById('color-4');
 
-const test = document.getElementById('test');
+const message = document.getElementById('message');
 
 const startButton = document.getElementById('startButton');
 
@@ -33,7 +33,9 @@ startButton.addEventListener('click', (event) => {
 function play() {
     let randomNum = Math.floor(Math.random() * 4);
     correctPattern.push(randomNum);
-    startButton.innerText = 'Wait for the computer to finish';
+    startButton.style.display = 'none';
+    message.style.display = 'initial';
+    message.innerText = 'Wait for the computer to finish';
     playNext(0);
 }
 
@@ -41,7 +43,7 @@ function playNext(idx) {
     currentColor = correctPattern[idx];
     if(!currentColor) {
         gameStarted = true;
-        startButton.innerText = 'Your turn';
+        message.innerText = 'Your turn';
         console.log('Fin');
         return;
     }
@@ -73,8 +75,16 @@ function handleButtonClick(e) {
 
     for (let i = 0; i < userPattern.length; i++) {
         if(correctPattern[i] !== userPattern[i]) {
-            alert('Fallo');
-            
+            // message       1 - 2
+            // mismo patron  2 - 1
+            message.innerText = 'Wrong pattern, please try again.';
+            setTimeout(() => {
+                if(mode === 'easy') {
+                    fail = true;
+                    resetGame();
+                    playNext(0);
+                }
+            }, 1000);
             break;
         }
     }
@@ -96,9 +106,8 @@ function nextLevel() {
 }
 
 function resetGame() {
+    message.innerText = 'Wait for the computer to finish';
     userPattern = [];
     gameStarted = false;
     startButton.innerText = 'Start';
 }
-
-
