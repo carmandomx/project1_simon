@@ -7,6 +7,8 @@ const green = document.getElementById('color-2');
 const blue = document.getElementById('color-3');
 const yellow = document.getElementById('color-4');
 
+const test = document.getElementById('test');
+
 const startButton = document.getElementById('startButton');
 
 // Var declaration
@@ -16,8 +18,6 @@ let currentColor = 0;
 
 let gameStarted = false;
 let mode = 'easy';
-
-
 
 // Click to the color squares
 red.addEventListener('click', (event) => handleButtonClick(event));
@@ -48,10 +48,17 @@ function playNext(idx) {
 
     const currentElement = document.getElementById(`color-${currentColor}`);
     currentElement.classList.add('active');
+    sound(currentColor);
     setTimeout(() => {
         currentElement.classList.remove('active');
         playNext(idx + 1);
     }, 500);
+}
+
+function sound(colorNumber) {
+    const audioName = './audio/simonSound' + colorNumber + '.mp3';
+    let audio = new Audio(audioName);
+    audio.play();
 }
 
 function handleButtonClick(e) {
@@ -59,6 +66,8 @@ function handleButtonClick(e) {
     const colorID = e.target.id;
     const colorNumber = Number(colorID.split('-')[1]);
     userPattern.push(colorNumber);
+
+    sound(colorNumber);
 
     let fail = false;
 
@@ -70,8 +79,10 @@ function handleButtonClick(e) {
         }
     }
     if(userPattern.length === correctPattern.length && !fail) {
-        alert('success');
-        nextLevel();
+        // alert('success');
+        setTimeout(() => {
+            nextLevel();
+        }, 1000);
     }
     console.log('clicker', colorNumber);
 }
