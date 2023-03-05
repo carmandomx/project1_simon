@@ -11,11 +11,14 @@ const message = document.getElementById('message');
 const reset = document.getElementById('resetButton');
 
 const startButton = document.getElementById('startButton');
+const header = document.getElementById('header');
 
 // Var declaration
 let userPattern = [];
 let correctPattern = [];
 let currentColor = 0;
+
+let won = false;
 
 let gameStarted = false;
 let mode = 'easy';
@@ -26,7 +29,10 @@ green.addEventListener('click', handleButtonClick);
 blue.addEventListener('click', handleButtonClick);
 yellow.addEventListener('click', handleButtonClick);
 
-reset.addEventListener('click', () => resetGame(true));
+reset.addEventListener('click', () => {
+    resetGame(true);
+    reset.style.display = 'none';
+});
 
 // click on start button
 startButton.addEventListener('click', (event) => {
@@ -39,6 +45,7 @@ function play() {
     startButton.style.display = 'none';
     message.style.display = 'initial';
     message.innerText = 'Wait for the computer to finish';
+    reset.style.display = 'initial';
     playNext(0);
 }
 
@@ -49,6 +56,7 @@ function playNext(idx) {
         const CP = correctPattern.length;
         const UP = userPattern.length;
         message.innerText = `Your turn: ${CP - UP} taps`;
+        header.innerText = `Level ${idx} of 20`;
         return;
     }
 
@@ -68,7 +76,7 @@ function sound(colorNumber) {
 }
 
 function handleButtonClick(e) {
-    if(!gameStarted) return;
+    if(!gameStarted || won) return;
     const colorID = e.target.id;
     const colorNumber = Number(colorID.split('-')[1]);
     userPattern.push(colorNumber);
@@ -84,11 +92,11 @@ function handleButtonClick(e) {
             message.innerText = 'Wrong pattern, please try again.';
             setTimeout(() => {
                 if(mode === 'easy') {
-                    fail = true;
                     resetGame();
                     playNext(0);
                 }
             }, 1000);
+            fail = true;
             break;
         }
     }
@@ -97,18 +105,26 @@ function handleButtonClick(e) {
     const UP = userPattern.length;
     message.innerText = `Your turn: ${CP - UP} taps`;
     
+    if(fail) return;
 
-    if(userPattern.length === correctPattern.length && !fail) {
+    if(userPattern.length === 20) {
+        won = true;
+        message.innerText = 'YOU WIN';
+        return;
+    }
+
+    if(userPattern.length === correctPattern.length) {
         message.innerText = 'Success! Keep going!';
         setTimeout(() => {
             nextLevel();
         }, 1000);
+        
     }
 }
 
 function nextLevel() {
     // Create a random num for the color pattern
-    let randomNum = Math.floor(Math.random() * (4 - 1)) + 1;
+    let randomNum = Math.floor(Math.random() * 4) + 1;
    
     correctPattern.push(randomNum);
     console.log(correctPattern)
@@ -124,6 +140,7 @@ function resetGame(newGame = false) {
     } else {
         message.innerText = 'Wait for the computer to finish';
     }
+    won = false;
     userPattern = [];
     gameStarted = false;
 }
