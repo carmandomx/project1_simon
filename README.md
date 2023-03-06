@@ -12,7 +12,7 @@ Please use this format for your User Stories assignations
 
 | User Stories     | Alexis | 
 | ---------------- | :--: |
-| User Story 1-9 |  X   |
+| User Story 1 - 9 |  X   |
 
 
 # Live demo
