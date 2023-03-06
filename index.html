@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITK - Simon</title>
-</head>
-<body>
-    <!-- Good luck! -->
-
-    <script src="./index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Simon project</title>
+    <!-- As a user, when I get to step 20 and complete that pattern I will see message declaring me 
+        the winner and an option to start a new game
+.
+ -->
+  </head>
+  <body>
+    <section class="content-container">
+      <h2 id="wrong-counter"></h2>
+      <h3 id="steps"></h3>
+      <p id="level"></p>
+      <p class="newGame"></p>
+      <section>
+        <button id="red" class="quadrant red"></button
+        ><button id="blue" class="quadrant blue"></button>
+      </section>
+      <section>
+        <button id="yellow" class="quadrant yellow"></button
+        ><button id="green" class="quadrant green"></button>
+      </section>
+      <section class="buttons-container">
+        <button class="start-game game-button">Start</button>
+        <button class="start-over game-button">Restart</button>
+        <button id="hard-mode">Easy Mode</button>
+      </section>
+      <p style="color: red" id="hard-mode-advice"></p>
+    </section>
+    <script src="index.js"></script>
+  </body>
 </html>
