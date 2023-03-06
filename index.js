@@ -1,6 +1,7 @@
 
 console.log('Live reloading');
 
+
 // Asign html elementos to JS variables
 const red = document.getElementById('color-1');
 const green = document.getElementById('color-2');
