@@ -4,21 +4,17 @@ Welcome! This repo contains helpful information and starter files for your proje
 
 ## Team members
 
-Write here the names, career path and email of the members of the team
+Alan Villanueva - Javascript - alan.villanueva@itksquare.edu.mx
 
 ## Assignation 
 
 Please use this format for your User Stories assignations
 
-| User Stories     | John Doe | Jane Doe |
-| ---------------- | :--: | ---: |
-| Add US text here |  X   |      |
-| Add US text here |      |    X |
-| Add US text here |  X   |      |
+All user stories - Alan Villanueva
 
 # Live demo
 
-Please include here a link to your [live demo](url_here_please)
+Please include here a link to your [live demo]([https://alanvillanueva-ksquare.github.io/project1_simon/]
 
 # Requeriments
 You need to use the same version of node that we use in class and no external dependices can be used. This means no frameworks or libraries.
