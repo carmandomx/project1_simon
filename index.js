@@ -10,6 +10,7 @@ const hardButton = document.querySelector("#chk");
 const readybtn = document.querySelector("#ready");
 const startButton = document.querySelector("#start");
 const numberOfLevels = document.querySelector("#numlevels")
+const numberOfSteps = document.querySelector("#stp")
 
 //let's define all variables
 let order = [];
@@ -27,10 +28,10 @@ let levels = setLevels();
 
 //This function allows to set the number of levels that the player wants to play each time, also this function doesn't allow text or nothing as an answer 
     function setLevels() {
-        let levels = prompt("Please select the number of levels you want to play (1-20)");
+        let levels = prompt("Please select the number of levels you want to play (20 by default)");
         document.querySelector("#numlevels").value = levels;
         while (levels == null || /\D/.test(levels) || levels == "") {
-            levels = prompt("Entre un número VÁLIDO (1-20): ");
+            levels = 20;
             document.querySelector("#numlevels").value = levels;}
         if (levels > 20) {
             levels = 20
@@ -87,12 +88,12 @@ function play() {
   intervalId = 0;
   turn = 1;
   turnCounter.innerHTML = "You are in the level " + turn + " of " + levels;
+  numberOfSteps.innerHTML ="Only 1 step in this turn"
   good = true;
   for (var i = 0; i < 20; i++) {
     order.push(Math.floor(Math.random() * 4) + 1);
   }
   compTurn = true;
-
   intervalId = setInterval(gameTurn, 800);
 }
 
@@ -272,6 +273,7 @@ function check() {
     compTurn = true;
     flash = 0;
     turnCounter.innerHTML = "You are in the level " + turn + " of " + levels;
+    numberOfSteps.innerHTML = turn + " steps in this turn"
     intervalId = setInterval(gameTurn, 800);
   }
 
