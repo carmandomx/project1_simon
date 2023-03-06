@@ -1,0 +1,111 @@
+body {
+    background-color: ligthgray;
+    display: grid;
+    width: 100%;
+    min-width: 20%;
+    gap: 25px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#start {
+    border-radius: 5px;
+    font-size: 2em;
+    background-color: black;
+    color: white;
+}
+
+#selct{
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: black;
+    color: white;
+}
+
+#chktxt, #labelon, #labellev {
+    font-size: 2em;
+}
+
+#chk, #ready {
+    width: 20px;
+    height: 20px;
+}
+
+#head, #opt, #turn {
+    display: grid;
+    justify-content: center;
+    position: relative;
+}
+
+#numlevels {
+    height: 20px;
+    width: 40px;
+    margin-left: 30px;
+    font-size: 1em;
+}
+
+#title{
+    font-size: 4em;
+}
+
+#turn {
+    font-size: 2em;
+    margin: 0px;
+}
+
+#readychk, #hardchk, #ask {
+    display:flex ;
+    justify-content: center;
+    align-items: center;
+
+}
+/*BUTTONS*/
+
+#game {
+    display: grid;
+    grid-template-areas: 
+    "a b"
+    "c d";
+    gap: 20px;
+    }
+
+#greenbtn {
+    height: 250px;
+    width: 250px;
+    background: darkgreen;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    justify-self: right;
+
+  }
+  
+  #redbtn {
+    height: 250px;
+    width: 250px;
+    background: darkred;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    justify-self: left;
+  }
+  
+  #yellowbtn {
+    height: 250px;
+    width: 250px;
+    background: goldenrod;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    justify-self: right;
+  }
+  
+  #bluebtn {
+    height: 250px;
+    width: 250px;
+    background: darkblue;
+    border-style: solid;
+    border-width: 5px;
+    box-sizing: border-box;
+    justify-self: left;
+}
+
