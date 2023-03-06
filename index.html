@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>ITK - Simon</title>
-</head>
-<body>
-    <!-- Good luck! -->
-
-    <script src="./index.js"></script>
-</body>
+  </head>
+  <body>
+    <div class="game">
+      <h1 class="title">Simon Game</h1>
+      <p class="score">Level 0 of 20</p>
+      <div class="board">
+        <div class="up">
+          <button class="button" id="green"></button>
+          <button class="button" id="red"></button>
+        </div>
+        <div class="down">
+          <button class="button" id="yellow"></button>
+          <button class="button" id="blue"></button>
+        </div>
+      </div>
+      <p class="message">Press start to play the game!</p>
+      <button class="start">Start</button>
+      <button class="restart">Restart</button>
+      <button class="change-mode">Hard mode</button>
+    </div>
+    <script src="index.js"></script>
+  </body>
 </html>

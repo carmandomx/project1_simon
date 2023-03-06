@@ -1,0 +1,167 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #edf5c8;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+.game {
+    min-width: 400px;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: nowrap column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1{
+    font-size: 50px;
+}
+
+.score{
+    font-size: 30px;
+}
+
+.message{
+    font-size:  25px;
+    font-weight: bold;
+}
+
+.board {
+    width: 100%;
+    display: flex;
+    flex-flow: nowrap column;
+    max-width: 800px;
+    padding: 15px;
+}
+
+.up{
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.down{
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+#red{
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    border-radius: 8px;
+    border:5px #ffffff ;
+    border-style: solid;
+    box-shadow: 7px 7px 0px  #000000;
+    cursor: pointer;
+    
+}
+
+#blue{
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 8px;
+    border:5px #ffffff ;
+    border-style: solid;
+    box-shadow: 7px 7px 0px  #000000;
+    cursor: pointer;
+}
+
+#green{
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    border-radius: 8px;
+    border:5px #ffffff ;
+    border-style: solid;
+    box-shadow: 7px 7px 0px  #000000;
+    cursor: pointer;
+}
+
+#yellow{
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    border-radius: 8px;
+    border:5px #ffffff ;
+    border-style: solid;
+    box-shadow: 7px 7px 0px  #000000;
+    cursor: pointer;
+
+}
+
+.start {
+    font-size: 18px;
+    padding: 10px 35%;
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .restart {
+    font-size: 12px;
+    padding: 10px 7%;
+    background-color: #f4aaaa;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 150px;
+  }
+
+  .change-mode {
+    font-size: 12px;
+    padding: 10px 7%;
+    background-color: #d581ef;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  
+/* CLICK STYLES*/
+  #red:active{
+    box-shadow: none;
+  }
+  #yellow:active{
+    box-shadow: none;
+  }
+  #green:active{
+    box-shadow: none;
+  }
+  #blue:active{
+    box-shadow: none;
+  }
+
+
+#red.lit{
+    box-shadow:none
+}
+#yellow.lit{
+    box-shadow:none
+}
+#green.lit{
+    box-shadow:none
+}
+#blue.lit{
+    box-shadow:none
+}
