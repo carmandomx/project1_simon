@@ -1,5 +1,6 @@
 console.log('Live reloading')
 
+//lets define all the constants
 const turnCounter = document.querySelector("#turn");
 const greenbtn = document.querySelector("#greenbtn");
 const redbtn = document.querySelector("#redbtn");
@@ -10,6 +11,7 @@ const readybtn = document.querySelector("#ready");
 const startButton = document.querySelector("#start");
 const numberOfLevels = document.querySelector("#numlevels")
 
+//let's define all variables
 let order = [];
 let playerOrder = [];
 let flash;
@@ -23,7 +25,7 @@ let on = false;
 let win;
 let levels = setLevels();
 
-
+//This function allows to set the number of levels that the player wants to play each time, also this function doesn't allow text or nothing as an answer 
     function setLevels() {
         let levels = prompt("Please select the number of levels you want to play (1-20)");
         document.querySelector("#numlevels").value = levels;
@@ -46,7 +48,7 @@ let levels = setLevels();
 
  
 
-
+//defines what will happen when the player click the button
 hardButton.addEventListener('click', (event) => {
   if (hardButton.checked == true) {
     hard = true;
@@ -58,7 +60,7 @@ hardButton.addEventListener('click', (event) => {
     startButton.innerHTML ="Start game"
   }
 });
-
+//defines what will happen when the player click the button
 readybtn.addEventListener('click', (event) => {
   if (readybtn.checked == true) {
     on = true;
@@ -76,7 +78,7 @@ startButton.addEventListener('click', (event) => {
     play();
   }
 });
-
+//defines what will happen in a turn
 function play() {
   win = false;
   order = [];
@@ -115,7 +117,7 @@ function gameTurn() {
     }, 200);
   }
 }
-
+//this six functions defines the sounds of the game
 function one() {
   if (noise) {
     let audio = document.getElementById("audio1");
@@ -167,21 +169,21 @@ function winner() {
     }
     noise = true;
 }
-
+//restart the colors
 function clearColor() {
   greenbtn.style.backgroundColor = "darkgreen";
   redbtn.style.backgroundColor = "darkred";
   yellowbtn.style.backgroundColor = "goldenrod";
   bluebtn.style.backgroundColor = "darkblue";
 }
-
+//enlight the colors to it look like a flash
 function flashColor() {
   greenbtn.style.backgroundColor = "lightgreen";
   redbtn.style.backgroundColor = "tomato";
   yellowbtn.style.backgroundColor = "yellow";
   bluebtn.style.backgroundColor = "lightskyblue";
 }
-
+//defines what happens when the player hit a color square
 greenbtn.addEventListener('click', (event) => {
   if (on) {
     playerOrder.push(1);
@@ -233,7 +235,7 @@ bluebtn.addEventListener('click', (event) => {
     }
   }
 })
-
+//check if the player make a bad choice
 function check() {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
@@ -274,7 +276,7 @@ function check() {
   }
 
 }
-
+//defines what will happen when the player wins
 function winGame() {
   flashColor();
   winner();
