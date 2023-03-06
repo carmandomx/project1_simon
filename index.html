@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" type="text/css" />
+    <audio id="audio1">
+      <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" />
+    </audio>
+    <audio id="audio2">
+      <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" />
+    </audio>
+    <audio id="audio3">
+      <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" />
+    </audio>
+    <audio id="audio4">
+      <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" />
+    </audio>
+    <audio id="audio5">
+      <source src="audio5.mp3" />
+    </audio>
+    <audio id="audio6">
+      <source src="audio6.mp3" />
+    </audio>
     <title>ITK - Simon</title>
-</head>
-<body>
-    <!-- Good luck! -->
-
-    <script src="./index.js"></script>
-</body>
+  </head>
+  <body>
+    <section id="head">
+      <div id="title"><strong>ITK - Simon</strong></div>
+    </section>
+    <section id="game">
+      <div id="greenbtn"></div>
+      <div id="redbtn"></div>
+      <div id="yellowbtn"></div>
+      <div id="bluebtn"></div>
+    </section>
+    <section id="secturn">
+      <p id="turn">Are you ready?</p>
+      <p id="stp">Let's play!</p>
+    </section>
+    <section id="opt">
+      <div id="readychk">
+        <label for="ready" id="labelon">Ready?</label>
+        <input type="checkbox" name="ready" id="ready" />
+      </div>
+      <div id="hardchk">
+        <label for="enablehard" id="chktxt">Start in Hard Mode</label>
+        <input type="checkbox" name="enablehard" id="chk" />
+      </div>
+      <div id="ask">
+        <label for="numlevels" id="labellev">Levels (1-20):</label>
+        <input
+          type="number"
+          name="numlevels"
+          id="numlevels"
+          min="1"
+          max="20"
+          value=""
+          disabled
+        />
+        <button onclick="location.reload()" id="selct">Change</button>
+      </div>
+      <br />
+      <button id="start">Start game</button>
+    </section>
+    <script src="index.js"></script>
+  </body>
 </html>
