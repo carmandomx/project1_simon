@@ -4,10 +4,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>ITK - Simon</title>
 </head>
 <body>
     <!-- Good luck! -->
+    <main>
+
+        <!-- Main container for all HTML elements -->
+        <div class="mainContainer">
+            <h1 id="header">Simon Game</h1>
+            <!-- Container for color buttons -->
+            <div class="colorButtons">
+                <div class="quadrant red" id="color-1"></div>
+                <div class="quadrant green" id="color-2"></div>
+                <div class="quadrant blue" id="color-3"></div>
+                <div class="quadrant yellow" id="color-4"></div>
+            </div>
+            <br>
+            <div class="footerContainer">
+                <!-- Display info to user -->
+                <p id="message" style="display: none;"></p>
+                <!-- Start button -->
+                <button type="button" class="button" id="startButton">Start</button>
+                <!-- Reset button -->
+                <button type="button" class="button" id="resetButton" style="display: none;">Reset</button>
+                <br>
+                <!-- <button type="checkbox" name="" id="hardcoreMode"><label for="hardcoreMode">HardCore mode</label> -->
+            </div>
+        </div>
+
+    </main>
 
     <script src="./index.js"></script>
 </body>
